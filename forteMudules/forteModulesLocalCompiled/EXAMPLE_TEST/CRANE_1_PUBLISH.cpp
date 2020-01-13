@@ -1,0 +1,178 @@
+/*************************************************************************
+ *** FORTE Library Element
+ ***
+ *** This file was generated using the 4DIAC FORTE Export Filter V1.0.x!
+ ***
+ *** Name: CRANE_1_PUBLISH
+ *** Description: Composite Function Block Type
+ *** Version: 
+ ***     1.0: 2019-04-13/adeel - null - 
+ *************************************************************************/
+
+#include "CRANE_1_PUBLISH.h"
+#ifdef FORTE_ENABLE_GENERATED_SOURCE_CPP
+#include "CRANE_1_PUBLISH_gen.cpp"
+#endif
+
+DEFINE_FIRMWARE_FB(FORTE_CRANE_1_PUBLISH, g_nStringIdCRANE_1_PUBLISH)
+
+const CStringDictionary::TStringId FORTE_CRANE_1_PUBLISH::scm_anDataInputNames[] = {g_nStringIdE_STOP, g_nStringIdTEXT_BOX, g_nStringIdN_CTM, g_nStringIdN_FME, g_nStringIdN_FMA, g_nStringIdCHOOSE_CRANE, g_nStringIdACTIVATE_BRIDGE, g_nStringIdACTIVATE_TROLLEY, g_nStringIdHOOK_U_IN, g_nStringIdHOOK_D_IN, g_nStringIdX_CTM, g_nStringIdY_CTM, g_nStringIdX_FME, g_nStringIdY_FME, g_nStringIdX_FMA, g_nStringIdY_FMA};
+
+const CStringDictionary::TStringId FORTE_CRANE_1_PUBLISH::scm_anDataInputTypeIds[] = {g_nStringIdBOOL, g_nStringIdINT, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdBOOL, g_nStringIdINT, g_nStringIdINT, g_nStringIdINT, g_nStringIdINT, g_nStringIdINT, g_nStringIdINT};
+
+const TForteInt16 FORTE_CRANE_1_PUBLISH::scm_anEIWithIndexes[] = {-1, 0, 11};
+const TDataIOID FORTE_CRANE_1_PUBLISH::scm_anEIWith[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 255, 10, 11, 12, 13, 14, 15, 255};
+const CStringDictionary::TStringId FORTE_CRANE_1_PUBLISH::scm_anEventInputNames[] = {g_nStringIdINIT, g_nStringIdCONTROL_E, g_nStringIdLOC_E};
+
+const TForteInt16 FORTE_CRANE_1_PUBLISH::scm_anEOWithIndexes[] = {-1, -1};
+const CStringDictionary::TStringId FORTE_CRANE_1_PUBLISH::scm_anEventOutputNames[] = {g_nStringIdINITO};
+
+const SFBInterfaceSpec FORTE_CRANE_1_PUBLISH::scm_stFBInterfaceSpec = {
+  3,  scm_anEventInputNames,  scm_anEIWith,  scm_anEIWithIndexes,
+  1,  scm_anEventOutputNames,  0, 0,  16,  scm_anDataInputNames, scm_anDataInputTypeIds,
+  0,  0, 0,
+  0, 0
+};
+
+
+const SCFB_FBInstanceData FORTE_CRANE_1_PUBLISH::scm_astInternalFBs[] = {
+  {g_nStringIdPUBLISH_1, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_1, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_2, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_3, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_4, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_5, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_6, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_7, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_8, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_9, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_10, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_11, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_12, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_13, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_14, g_nStringIdPUBLISH_1},
+  {g_nStringIdPUBLISH_1_15, g_nStringIdPUBLISH_1},
+  {g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdTYPE_CONVERTER_7I_9B},
+};
+
+const SCFB_FBParameter FORTE_CRANE_1_PUBLISH::scm_astParamters[] = {
+  {0, g_nStringIdQI, "1"},
+  {0, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1C/N_CTM/IN]"},
+  {1, g_nStringIdQI, "1"},
+  {1, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1B/TEXT_BOX/IN]"},
+  {2, g_nStringIdQI, "1"},
+  {2, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1K/X_CTM/IN]"},
+  {3, g_nStringIdQI, "1"},
+  {3, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1A/E_STOP/IN]"},
+  {4, g_nStringIdQI, "1"},
+  {4, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1L/Y_CTM/IN]"},
+  {5, g_nStringIdQI, "1"},
+  {5, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1D/N_FME/IN]"},
+  {6, g_nStringIdQI, "1"},
+  {6, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1O/X_FMA/IN]"},
+  {7, g_nStringIdQI, "1"},
+  {7, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1P/Y_FMA/IN]"},
+  {8, g_nStringIdQI, "1"},
+  {8, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1F/CHOOSE_CRANE/IN]"},
+  {9, g_nStringIdQI, "1"},
+  {9, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1H/ACTIVATE_TROLLEY/IN]"},
+  {10, g_nStringIdQI, "1"},
+  {10, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1I/HOOK_U_IN/IN]"},
+  {11, g_nStringIdQI, "1"},
+  {11, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1G/ACTIVATE_BRIDGE/IN]"},
+  {12, g_nStringIdQI, "1"},
+  {12, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1E/N_FMA/IN]"},
+  {13, g_nStringIdQI, "1"},
+  {13, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1J/HOOK_D_IN/IN]"},
+  {14, g_nStringIdQI, "1"},
+  {14, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1M/X_FME/IN]"},
+  {15, g_nStringIdQI, "1"},
+  {15, g_nStringIdID, "opc_ua[opc.tcp://192.168.0.101:4840#/Objects/1:CRANE1N/Y_FME/IN]"},
+};
+
+const SCFB_FBConnectionData FORTE_CRANE_1_PUBLISH::scm_astEventConnections[] = {
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_1, g_nStringIdINITO), 1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1, g_nStringIdINIT), 0},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1, g_nStringIdINITO), 0, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_5, g_nStringIdINIT), 5},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_5, g_nStringIdINITO), 5, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_12, g_nStringIdINIT), 12},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_12, g_nStringIdINITO), 12, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_8, g_nStringIdINIT), 8},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_8, g_nStringIdINITO), 8, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_11, g_nStringIdINIT), 11},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_11, g_nStringIdINITO), 11, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_9, g_nStringIdINIT), 9},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_9, g_nStringIdINITO), 9, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_10, g_nStringIdINIT), 10},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_10, g_nStringIdINITO), 10, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_13, g_nStringIdINIT), 13},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_13, g_nStringIdINITO), 13, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_2, g_nStringIdINIT), 2},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_2, g_nStringIdINITO), 2, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_4, g_nStringIdINIT), 4},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_4, g_nStringIdINITO), 4, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_14, g_nStringIdINIT), 14},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_14, g_nStringIdINITO), 14, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_15, g_nStringIdINIT), 15},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_15, g_nStringIdINITO), 15, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_6, g_nStringIdINIT), 6},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_6, g_nStringIdINITO), 6, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_7, g_nStringIdINIT), 7},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_7, g_nStringIdINITO), 7, GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdINITO), -1},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdINIT), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_3, g_nStringIdINIT), 3},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdCONTROL_E), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdCONTROL_E_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdLOC_E), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdLOC_E_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdCONTROL_E_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_3, g_nStringIdREQ), 3},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdLOC_E_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_2, g_nStringIdREQ), 2},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_3, g_nStringIdINITO), 3, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_1, g_nStringIdINIT), 1},
+};
+
+const SCFB_FBFannedOutConnectionData FORTE_CRANE_1_PUBLISH::scm_astFannedOutEventConnections[] = {
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_1, g_nStringIdREQ), 1},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1, g_nStringIdREQ), 0},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_5, g_nStringIdREQ), 5},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_12, g_nStringIdREQ), 12},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_8, g_nStringIdREQ), 8},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_11, g_nStringIdREQ), 11},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_9, g_nStringIdREQ), 9},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_10, g_nStringIdREQ), 10},
+  {18, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_13, g_nStringIdREQ), 13},
+  {19, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_4, g_nStringIdREQ), 4},
+  {19, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_14, g_nStringIdREQ), 14},
+  {19, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_15, g_nStringIdREQ), 15},
+  {19, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_6, g_nStringIdREQ), 6},
+  {19, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_7, g_nStringIdREQ), 7},
+};
+
+const SCFB_FBConnectionData FORTE_CRANE_1_PUBLISH::scm_astDataConnections[] = {
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdE_STOP), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdE_STOP_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdTEXT_BOX), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdTEXT_BOX_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdN_CTM), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdN_CTM_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdN_FME), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdN_FME_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdN_FMA), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdN_FMA_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdCHOOSE_CRANE), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdCHOOSE_CRANE_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdACTIVATE_BRIDGE), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdACTIVATE_BRIDGE_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdACTIVATE_TROLLEY), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdACTIVATE_TROLLEY_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdHOOK_U_IN), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdHOOK_U_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdHOOK_D_IN), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdHOOK_D_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdX_CTM), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdX_CTM_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdY_CTM), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdY_CTM_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdX_FME), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdX_FME_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdY_FME), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdY_FME_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdX_FMA), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdX_FMA_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_1_ARG(g_nStringIdY_FMA), -1, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdY_FMA_I), 16},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdE_STOP_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_3, g_nStringIdSD_1), 3},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdTEXT_BOX_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_1, g_nStringIdSD_1), 1},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdN_CTM_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1, g_nStringIdSD_1), 0},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdN_FME_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_5, g_nStringIdSD_1), 5},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdN_FMA_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_12, g_nStringIdSD_1), 12},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdCHOOSE_CRANE_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_8, g_nStringIdSD_1), 8},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdACTIVATE_BRIDGE_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_11, g_nStringIdSD_1), 11},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdACTIVATE_TROLLEY_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_9, g_nStringIdSD_1), 9},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdHOOK_U_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_10, g_nStringIdSD_1), 10},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdHOOK_D_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_13, g_nStringIdSD_1), 13},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdX_CTM_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_2, g_nStringIdSD_1), 2},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdY_CTM_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_4, g_nStringIdSD_1), 4},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdX_FME_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_14, g_nStringIdSD_1), 14},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdY_FME_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_15, g_nStringIdSD_1), 15},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdX_FMA_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_6, g_nStringIdSD_1), 6},
+  {GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdTYPE_CONVERTER_7I_9B, g_nStringIdY_FMA_O), 16, GENERATE_CONNECTION_PORT_ID_2_ARG(g_nStringIdPUBLISH_1_7, g_nStringIdSD_1), 7},
+};
+
+const SCFB_FBNData FORTE_CRANE_1_PUBLISH::scm_stFBNData = {
+  17, scm_astInternalFBs,
+  21, scm_astEventConnections,
+  14, scm_astFannedOutEventConnections,
+  32, scm_astDataConnections,
+  0, 0,
+  32, scm_astParamters
+};
+
+

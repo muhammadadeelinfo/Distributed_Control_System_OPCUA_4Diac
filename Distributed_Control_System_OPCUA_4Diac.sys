@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE System SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<System Comment="" Name="Distributed_Control_System_OPCUA_4Diac">
+  <VersionInfo Author="Author" Organization="Eclipse 4diac" Version="1.0"/>
+  <Application Comment="" Name="Distributed_Control_System_OPCUA_4DiacApp">
+    <SubAppNetwork>
+      <FB Comment="" Name="HMI_COME_TO_ME" Type="HMI_COME_TO_ME" x="3800.0" y="5500.0"/>
+      <FB Comment="" Name="EMERGENCY_STOP" Type="RADIO_BOOL" x="600.0" y="1200.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Start"/>
+        <Parameter Name="LABEL0" Value="Emergency STOP"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="INPUT_BOX" Type="IN_ANY" x="1400.0" y="-1000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="W" Value="20"/>
+        <Parameter Name="TYPE" Value="INT"/>
+      </FB>
+      <FB Comment="" Name="COME_TO_ME" Type="RADIO_BOOL" x="2500.0" y="-1000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Come to me"/>
+        <Parameter Name="LABEL0" Value="STOP"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="FOLLOW_ME" Type="RADIO_BOOL" x="3500.0" y="-1000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Follow me"/>
+        <Parameter Name="LABEL0" Value="STOP"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="FOLLOW_MACHINE" Type="RADIO_BOOL" x="1700.0" y="-100.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Follow machine"/>
+        <Parameter Name="LABEL0" Value="STOP"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="INT2INT" Type="INT2INT" x="2000.0" y="-900.0"/>
+      <FB Comment="" Name="HMI_FOLLOW_ME" Type="HMI_FOLLOW_ME" x="3800.0" y="7100.0"/>
+      <FB Comment="" Name="HMI_FOLLOW_MACHINE" Type="HMI_FOLLOW_MACHINE" x="3800.0" y="8100.0"/>
+      <FB Comment="" Name="CRANE2_COME_TO_ME" Type="CRANE2_COME_TO_ME" x="11800.0" y="5100.0"/>
+      <FB Comment="" Name="CRANE1_COME_TO_ME" Type="CRANE1_COME_TO_ME" x="11700.0" y="-500.0"/>
+      <FB Comment="" Name="CRANE2_FOLLOW_ME" Type="CRANE2_FOLLOW_ME" x="11800.0" y="6900.0"/>
+      <FB Comment="" Name="CRANE1_FOLLOW_MACHINE" Type="CRANE1_FOLLOW_MACHINE" x="11700.0" y="3100.0"/>
+      <FB Comment="" Name="CRANE2_FOLLOW_MACHINE" Type="CRANE2_FOLLOW_MACHINE" x="11805.0" y="8700.0"/>
+      <FB Comment="" Name="MASTER_SLAVE" Type="RADIO_BOOL" x="3500.0" y="-100.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Activate Bridge"/>
+        <Parameter Name="LABEL0" Value="Stop"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="ACTIVATE_TROLLEY" Type="RADIO_BOOL" x="1400.0" y="1600.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Activate Trolley"/>
+        <Parameter Name="LABEL0" Value="Stop"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="ACTIVATE_HOOK" Type="RADIO_BOOL" x="2600.0" y="1700.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Hook Up"/>
+        <Parameter Name="LABEL0" Value="Stop"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="CRANE_NR" Type="RADIO_BOOL" x="2600.0" y="600.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Select Crane Nr"/>
+        <Parameter Name="LABEL0" Value="No"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="HOOK_UP_DOWN" Type="RADIO_BOOL" x="3500.0" y="1000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Hook Down"/>
+        <Parameter Name="LABEL0" Value="Stop"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="SENSORS_ACTUATORS_2" Type="SENSORS_ACTUATORS" x="10000.0" y="5100.0"/>
+      <FB Comment="" Name="SENSORS_ACTUATORS_1" Type="SENSORS_ACTUATORS" x="10000.0" y="-500.0"/>
+      <FB Comment="" Name="CHOOSE_X" Type="RADIO_BOOL" x="600.0" y="2600.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Choose X"/>
+        <Parameter Name="LABEL0" Value="No"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="CHOOSE_Y" Type="RADIO_BOOL" x="2700.0" y="2800.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="LABEL1" Value="Choose Y"/>
+        <Parameter Name="LABEL0" Value="No"/>
+        <Parameter Name="IN" Value="0"/>
+      </FB>
+      <FB Comment="" Name="BOOL2BOOL" Type="BOOL2BOOL" x="1500.0" y="2900.0"/>
+      <FB Comment="" Name="BOOL2BOOL_1" Type="BOOL2BOOL" x="3600.0" y="3100.0"/>
+      <FB Comment="" Name="CRANE_1" Type="CLIENT_6_0" x="2500.0" y="5500.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1/SERVER1]"/>
+      </FB>
+      <FB Comment="" Name="CEANE_2" Type="CLIENT_6_0" x="2500.0" y="7000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE2_IP%:4840#/Objects/1:CRANE2/SERVER2]"/>
+      </FB>
+      <FB Comment="" Name="TYPE_CONVERTER" Type="TYPE_CONVERTER_1I_11B" x="2600.0" y="4000.0"/>
+      <FB Comment="" Name="SERVER1" Type="SERVER_0_6" x="13100.0" y="2500.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1]"/>
+      </FB>
+      <FB Comment="" Name="FUNCTIONALITY_CONTROLLER" Type="FUNCTIONALITY_CONTROLLER" x="3700.0" y="3800.0"/>
+      <FB Comment="" Name="CRANE_SELECTOR" Type="CRANE_SELECTOR" x="2300.0" y="8200.0"/>
+      <FB Comment="" Name="FME_FMA_DECIDER" Type="FME_FMA_DECIDER" x="3800.0" y="4700.0"/>
+      <FB Comment="" Name="CRANE1_FOLLOW_ME" Type="CRANE1_FOLLOW_ME" x="11700.0" y="1300.0"/>
+      <FB Comment="" Name="SUBSCRIBE_10_2" Type="SUBSCRIBE_10" x="13100.0" y="6300.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="239.0.0.2:61497"/>
+      </FB>
+      <FB Comment="" Name="SERVER2" Type="SERVER_0_6" x="13200.0" y="8100.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE2]"/>
+      </FB>
+      <FB Comment="" Name="PUBLISH_10" Type="PUBLISH_10" x="600.0" y="4000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="239.0.0.2:61497"/>
+      </FB>
+      <FB Comment="" Name="SUB1" Type="SUBSCRIBE_10" x="13000.0" y="700.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="239.0.0.2:61497"/>
+      </FB>
+      <FB Comment="" Name="PUBLISH_12" Type="PUBLISH_12" x="600.0" y="-1100.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="239.0.0.1:61496"/>
+      </FB>
+      <FB Comment="" Name="SUBSCRIBE_12" Type="SUBSCRIBE_12" x="1800.0" y="4000.0">
+        <Parameter Name="QI" Value="1"/>
+        <Parameter Name="ID" Value="239.0.0.1:61496"/>
+      </FB>
+      <FB Comment="" Name="START_STOP_CONTROLLER_1" Type="START_STOP_CONTROLLER" x="10000.0" y="2300.0"/>
+      <FB Comment="" Name="START_STOP_CONTROLLER_2" Type="START_STOP_CONTROLLER" x="10000.0" y="7600.0"/>
+      <FB Comment="" Name="REQUEST" Type="DISPLAY_LOCAL_TIME" x="800.0" y="6100.0"/>
+      <FB Comment="" Name="RESPONSE" Type="DISPLAY_LOCAL_TIME" x="800.0" y="6800.0"/>
+      <FB Comment="" Name="PERMITTER_2" Type="PERMITTER" x="10000.0" y="8400.0"/>
+      <FB Comment="" Name="PERMITTER_1" Type="PERMITTER" x="10000.0" y="3400.0"/>
+      <FB Comment="" Name="BOOL2BOOL_2" Type="BOOL2BOOL" x="14500.0" y="10700.0"/>
+      <FB Comment="" Name="BOOL2BOOL_3" Type="BOOL2BOOL" x="4200.0" y="-2100.0"/>
+      <DataConnections>
+        <Connection Comment="" Destination="INT2INT.IN" Source="INPUT_BOX.OUT" dx1="80.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_2.CRANE_DIS_S" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_1.CRANE_DIS_S" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.CRANE_DIS_S" Source="SENSORS_ACTUATORS_1.CRANE_DIS_S" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_2.CRANE_DIS_S" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.CRANE_DIS_S" Source="SENSORS_ACTUATORS_2.CRANE_DIS_S" dx1="530.0"/>
+        <Connection Comment="" Destination="BOOL2BOOL_1.IN" Source="CHOOSE_Y.OUT" dx1="190.0"/>
+        <Connection Comment="" Destination="BOOL2BOOL.IN" Source="CHOOSE_X.OUT" dx1="90.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.Choose_X" Source="TYPE_CONVERTER.BOOL11OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.Choose_Y" Source="TYPE_CONVERTER.BOOL12OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.Choose_X" Source="TYPE_CONVERTER.BOOL11OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.Choose_Y" Source="TYPE_CONVERTER.BOOL12OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.Choose_Y" Source="TYPE_CONVERTER.BOOL12OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.CTM_X_I" Source="HMI_COME_TO_ME.Output_X" dx1="60.0" dx2="60.0" dy="3835.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.CTM_Y_I" Source="HMI_COME_TO_ME.Output_Y" dx1="60.0" dx2="60.0" dy="3755.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.FME_X_I" Source="HMI_FOLLOW_ME.Output_X" dx1="100.0" dx2="60.0" dy="2325.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.FME_Y_I" Source="HMI_FOLLOW_ME.Output_Y" dx1="100.0" dx2="60.0" dy="2240.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.FMA_X_I" Source="HMI_FOLLOW_MACHINE.Output_X" dx1="110.0" dx2="60.0" dy="1320.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.FMA_Y_I" Source="HMI_FOLLOW_MACHINE.Output_Y" dx1="105.0" dx2="60.0" dy="1245.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.HOOK_P" Source="SENSORS_ACTUATORS_1.HOOK_P" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_1.BRIDGE_P" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_1.TROLLEY_P" dx1="420.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_BRIDGE_F_I" Source="CRANE1_COME_TO_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-560.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_BRIGDE_B_I" Source="CRANE1_COME_TO_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-650.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_TROLLEY_F_I" Source="CRANE1_COME_TO_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-730.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_TROLLEY_B_I" Source="CRANE1_COME_TO_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-820.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_HOOK_U_I" Source="CRANE1_COME_TO_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="-905.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_HOOK_D_I" Source="CRANE1_COME_TO_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="-990.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.BRIDGE_P" Source="SENSORS_ACTUATORS_1.BRIDGE_P" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.TROLLEY_P" Source="SENSORS_ACTUATORS_1.TROLLEY_P" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.HOOK_P" Source="SENSORS_ACTUATORS_1.HOOK_P" dx1="420.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_ACTIVATE_MP" Source="CRANE1_FOLLOW_MACHINE.A_D_MPS" dx1="60.0" dx2="60.0" dy="-4080.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_BRIDGE_F_I" Source="CRANE1_FOLLOW_MACHINE.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-4170.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_BRIGDE_B_I" Source="CRANE1_FOLLOW_MACHINE.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-4250.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_TROLLEY_F_I" Source="CRANE1_FOLLOW_MACHINE.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-4335.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_TROLLEY_B_I" Source="CRANE1_FOLLOW_MACHINE.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-4425.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_HOOK_U_I" Source="CRANE1_FOLLOW_MACHINE.HOOK_U" dx1="60.0" dx2="60.0" dy="-4510.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_HOOK_D_I" Source="CRANE1_FOLLOW_MACHINE.HOOK_D" dx1="60.0" dx2="60.0" dy="-4590.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_ACTIVATE_MP" Source="CRANE1_COME_TO_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="-480.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.HOOK_P" Source="SENSORS_ACTUATORS_2.HOOK_P" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_2.TROLLEY_P" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_2.BRIDGE_P" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_2.BRIDGE_P" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.BRIDGE_P" Source="SENSORS_ACTUATORS_2.BRIDGE_P" dx1="530.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_2.TROLLEY_P" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.TROLLEY_P" Source="SENSORS_ACTUATORS_2.TROLLEY_P" dx1="530.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.HOOK_P" Source="SENSORS_ACTUATORS_2.HOOK_P" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.HOOK_P" Source="SENSORS_ACTUATORS_2.HOOK_P" dx1="530.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_ACTIVATE_MP" Source="CRANE2_COME_TO_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="-480.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_BRIDGE_F_I" Source="CRANE2_COME_TO_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-565.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_BRIGDE_B_I" Source="CRANE2_COME_TO_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-650.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_TROLLEY_F_I" Source="CRANE2_COME_TO_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-735.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_TROLLEY_B_I" Source="CRANE2_COME_TO_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-825.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_HOOK_U_I" Source="CRANE2_COME_TO_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="-900.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_HOOK_D_I" Source="CRANE2_COME_TO_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="-985.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_ACTIVATE_MP" Source="CRANE2_FOLLOW_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="-2280.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_BRIDGE_F_I" Source="CRANE2_FOLLOW_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-2365.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_BRIGDE_B_I" Source="CRANE2_FOLLOW_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-2450.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_TROLLEY_F_I" Source="CRANE2_FOLLOW_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-2540.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_TROLLEY_B_I" Source="CRANE2_FOLLOW_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-2620.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_HOOK_U_I" Source="CRANE2_FOLLOW_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="-2705.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_HOOK_D_I" Source="CRANE2_FOLLOW_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="-2795.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_ACTIVATE_MP" Source="CRANE2_FOLLOW_MACHINE.A_D_MPS" dx1="60.0" dx2="60.0" dy="-4085.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_BRIDGE_F_I" Source="CRANE2_FOLLOW_MACHINE.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-4170.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_BRIGDE_B_I" Source="CRANE2_FOLLOW_MACHINE.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-4250.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_TROLLEY_F_I" Source="CRANE2_FOLLOW_MACHINE.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-4335.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_TROLLEY_B_I" Source="CRANE2_FOLLOW_MACHINE.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-4420.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_HOOK_U_I" Source="CRANE2_FOLLOW_MACHINE.HOOK_U" dx1="60.0" dx2="60.0" dy="-4505.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_HOOK_D_I" Source="CRANE2_FOLLOW_MACHINE.HOOK_D" dx1="60.0" dx2="60.0" dy="-4590.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.CTM_X" Source="HMI_COME_TO_ME.Output_X" dx1="60.0" dx2="165.0" dy="855.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.CTM_Y" Source="HMI_COME_TO_ME.Output_Y" dx1="60.0" dx2="165.0" dy="765.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.CTM_X" Source="HMI_COME_TO_ME.Output_X" dx1="60.0" dx2="165.0" dy="855.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.CTM_Y" Source="HMI_COME_TO_ME.Output_Y" dx1="60.0" dx2="170.0" dy="765.0"/>
+        <Connection Comment="" Destination="FME_FMA_DECIDER.X_FME" Source="HMI_FOLLOW_ME.Output_X" dx1="110.0" dx2="175.0" dy="-665.0"/>
+        <Connection Comment="" Destination="FME_FMA_DECIDER.Y_FME" Source="HMI_FOLLOW_ME.Output_Y" dx1="105.0" dx2="165.0" dy="-750.0"/>
+        <Connection Comment="" Destination="FME_FMA_DECIDER.X_FMA" Source="HMI_FOLLOW_MACHINE.Output_X" dx1="105.0" dx2="165.0" dy="-1660.0"/>
+        <Connection Comment="" Destination="FME_FMA_DECIDER.Y_FMA" Source="HMI_FOLLOW_MACHINE.Output_Y" dx1="105.0" dx2="170.0" dy="-1750.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.FME_FMA_X" Source="FME_FMA_DECIDER.X_FME_FMA" dx1="60.0" dx2="60.0" dy="355.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.FME_FMA_Y" Source="FME_FMA_DECIDER.Y_FME_FMA" dx1="60.0" dx2="60.0" dy="270.0"/>
+        <Connection Comment="" Destination="CRANE_1.SD_1" Source="CRANE_SELECTOR.CTM_X_1" dx1="60.0" dx2="60.0" dy="-645.0"/>
+        <Connection Comment="" Destination="CRANE_1.SD_2" Source="CRANE_SELECTOR.CTM_Y_1" dx1="60.0" dx2="60.0" dy="-735.0"/>
+        <Connection Comment="" Destination="CRANE_1.SD_3" Source="CRANE_SELECTOR.FME_X_1" dx1="60.0" dx2="60.0" dy="-810.0"/>
+        <Connection Comment="" Destination="CRANE_1.SD_4" Source="CRANE_SELECTOR.FME_Y_1" dx1="60.0" dx2="60.0" dy="-900.0"/>
+        <Connection Comment="" Destination="CRANE_1.SD_5" Source="CRANE_SELECTOR.FMA_X_1" dx1="60.0" dx2="60.0" dy="-985.0"/>
+        <Connection Comment="" Destination="CRANE_1.SD_6" Source="CRANE_SELECTOR.FMA_Y_1" dx1="60.0" dx2="60.0" dy="-1070.0"/>
+        <Connection Comment="" Destination="CEANE_2.SD_1" Source="CRANE_SELECTOR.CTM_X_2" dx1="60.0" dx2="60.0" dy="-1160.0"/>
+        <Connection Comment="" Destination="CEANE_2.SD_2" Source="CRANE_SELECTOR.CTM_Y_2" dx1="60.0" dx2="60.0" dy="-1240.0"/>
+        <Connection Comment="" Destination="CEANE_2.SD_3" Source="CRANE_SELECTOR.FME_X_2" dx1="60.0" dx2="60.0" dy="-1325.0"/>
+        <Connection Comment="" Destination="CEANE_2.SD_4" Source="CRANE_SELECTOR.FME_Y_2" dx1="60.0" dx2="60.0" dy="-1415.0"/>
+        <Connection Comment="" Destination="CEANE_2.SD_5" Source="CRANE_SELECTOR.FMA_X_2" dx1="60.0" dx2="60.0" dy="-1495.0"/>
+        <Connection Comment="" Destination="CEANE_2.SD_6" Source="CRANE_SELECTOR.FMA_Y_2" dx1="60.0" dx2="60.0" dy="-1575.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_HOOK_D_I" Source="CRANE1_FOLLOW_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="-2795.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_HOOK_U_I" Source="CRANE1_FOLLOW_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="-2710.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_TROLLEY_B_I" Source="CRANE1_FOLLOW_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-2620.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_TROLLEY_F_I" Source="CRANE1_FOLLOW_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-2540.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_BRIGDE_B_I" Source="CRANE1_FOLLOW_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-2450.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_BRIDGE_F_I" Source="CRANE1_FOLLOW_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-2365.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_ACTIVATE_MP" Source="CRANE1_FOLLOW_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="-2280.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_1.CRANE_DIS_S" dx1="425.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.HOOK_P" Source="SENSORS_ACTUATORS_1.HOOK_P" dx1="425.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_1.TROLLEY_P" dx1="425.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_1.BRIDGE_P" dx1="425.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.TEXT_BOX" Source="SUBSCRIBE_10_2.RD_2" dx1="60.0" dx2="60.0" dy="-1940.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.TEXT_BOX" Source="SUBSCRIBE_10_2.RD_2" dx1="60.0" dx2="60.0" dy="-1940.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.TEXT_BOX" Source="SUBSCRIBE_10_2.RD_2" dx1="60.0" dx2="60.0" dy="-1940.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.CHOOSE_CRANE" Source="SUBSCRIBE_10_2.RD_6" dx1="60.0" dx2="60.0" dy="-2280.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.CHOOSE_CRANE" Source="SUBSCRIBE_10_2.RD_6" dx1="60.0" dx2="60.0" dy="-2275.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.CHOOSE_CRANE" Source="SUBSCRIBE_10_2.RD_6" dx1="60.0" dx2="60.0" dy="-2280.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.ACTIVATE_TROLLEY" Source="SUBSCRIBE_10_2.RD_8" dx1="60.0" dx2="60.0" dy="-2445.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.ACTIVATE_TROLLEY" Source="SUBSCRIBE_10_2.RD_8" dx1="60.0" dx2="60.0" dy="-2445.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.ACTIVATE_TROLLEY" Source="SUBSCRIBE_10_2.RD_8" dx1="60.0" dx2="60.0" dy="-2445.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.HOOK_U_IN" Source="SUBSCRIBE_10_2.RD_9" dx1="60.0" dx2="60.0" dy="-2535.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.HOOK_U_IN" Source="SUBSCRIBE_10_2.RD_9" dx1="60.0" dx2="60.0" dy="-2530.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.HOOK_U_IN" Source="SUBSCRIBE_10_2.RD_9" dx1="60.0" dx2="60.0" dy="-2530.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.HOOK_D_IN" Source="SUBSCRIBE_10_2.RD_10" dx1="60.0" dx2="60.0" dy="-2620.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.HOOK_D_IN" Source="SUBSCRIBE_10_2.RD_10" dx1="65.0" dx2="60.0" dy="-2615.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.HOOK_D_IN" Source="SUBSCRIBE_10_2.RD_10" dx1="75.0" dx2="60.0" dy="-2620.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.X_B_LOC" Source="SERVER2.RD_1" dx1="60.0" dx2="60.0" dy="-3655.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.Y_T_LOC" Source="SERVER2.RD_2" dx1="60.0" dx2="60.0" dy="-3740.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.X_B_LOC" Source="SERVER2.RD_3" dx1="60.0" dx2="60.0" dy="-3815.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.Y_T_LOC" Source="SERVER2.RD_4" dx1="60.0" dx2="60.0" dy="-3905.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.X_B_LOC" Source="SERVER2.RD_5" dx1="60.0" dx2="60.0" dy="-3990.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.Y_T_LOC" Source="SERVER2.RD_6" dx1="60.0" dx2="60.0" dy="-4075.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.X_B_LOC" Source="SERVER1.RD_1" dx1="60.0" dx2="60.0" dy="-3650.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.Y_T_LOC" Source="SERVER1.RD_2" dx1="60.0" dx2="60.0" dy="-3735.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.X_B_LOC" Source="SERVER1.RD_3" dx1="60.0" dx2="60.0" dy="-3825.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.Y_T_LOC" Source="SERVER1.RD_4" dx1="60.0" dx2="60.0" dy="-3905.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.X_B_LOC" Source="SERVER1.RD_5" dx1="60.0" dx2="60.0" dy="-3990.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.Y_T_LOC" Source="SERVER1.RD_6" dx1="60.0" dx2="60.0" dy="-4080.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.Choose_X" Source="TYPE_CONVERTER.BOOL11OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_1" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0" dx2="60.0" dy="-395.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_2" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0" dx2="60.0" dy="-480.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_3" Source="TYPE_CONVERTER.BOOL3OUT" dx1="60.0" dx2="60.0" dy="-560.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_4" Source="TYPE_CONVERTER.BOOL4OUT" dx1="60.0" dx2="60.0" dy="-650.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_5" Source="TYPE_CONVERTER.BOOL5OUT" dx1="60.0" dx2="60.0" dy="-735.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_6" Source="TYPE_CONVERTER.BOOL6OUT" dx1="60.0" dx2="60.0" dy="-815.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_7" Source="TYPE_CONVERTER.BOOL7OUT" dx1="60.0" dx2="60.0" dy="-905.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_8" Source="TYPE_CONVERTER.BOOL8OUT" dx1="60.0" dx2="60.0" dy="-980.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_9" Source="TYPE_CONVERTER.BOOL9OUT" dx1="60.0" dx2="60.0" dy="-1065.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.SD_10" Source="TYPE_CONVERTER.BOOL10OUT" dx1="60.0" dx2="60.0" dy="-1155.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="-1850.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="-1855.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.TEXT_BOX" Source="SUB1.RD_2" dx1="60.0" dx2="60.0" dy="-1935.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.TEXT_BOX" Source="SUB1.RD_2" dx1="60.0" dx2="60.0" dy="-1935.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.TEXT_BOX" Source="SUB1.RD_2" dx1="60.0" dx2="60.0" dy="-1935.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.CHOOSE_CRANE" Source="SUB1.RD_6" dx1="60.0" dx2="60.0" dy="-2280.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.CHOOSE_CRANE" Source="SUB1.RD_6" dx1="60.0" dx2="60.0" dy="-2280.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.CHOOSE_CRANE" Source="SUB1.RD_6" dx1="60.0" dx2="60.0" dy="-2275.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.ACTIVATE_TROLLEY" Source="SUB1.RD_8" dx1="60.0" dx2="60.0" dy="-2450.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.ACTIVATE_TROLLEY" Source="SUB1.RD_8" dx1="60.0" dx2="60.0" dy="-2445.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.ACTIVATE_TROLLEY" Source="SUB1.RD_8" dx1="60.0" dx2="60.0" dy="-2445.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.HOOK_U_IN" Source="SUB1.RD_9" dx1="60.0" dx2="60.0" dy="-2535.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.HOOK_U_IN" Source="SUB1.RD_9" dx1="70.0" dx2="60.0" dy="-2535.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.HOOK_U_IN" Source="SUB1.RD_9" dx1="60.0" dx2="60.0" dy="-2535.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.HOOK_D_IN" Source="SUB1.RD_10" dx1="60.0" dx2="60.0" dy="-2620.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.HOOK_D_IN" Source="SUB1.RD_10" dx1="70.0" dx2="60.0" dy="-2615.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.HOOK_D_IN" Source="SUB1.RD_10" dx1="60.0" dx2="60.0" dy="-2615.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_1" Source="EMERGENCY_STOP.OUT" dx1="60.0" dx2="60.0" dy="-925.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_2" Source="INT2INT.OUT" dx1="60.0" dx2="60.0" dy="-600.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_3" Source="COME_TO_ME.OUT" dx1="165.0" dx2="60.0" dy="-750.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_4" Source="FOLLOW_ME.OUT" dx1="130.0" dx2="60.0" dy="-745.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_5" Source="FOLLOW_MACHINE.OUT" dx1="60.0" dx2="60.0" dy="370.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_6" Source="CRANE_NR.OUT" dx1="60.0" dx2="60.0" dy="-2350.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_7" Source="MASTER_SLAVE.OUT" dx1="115.0" dx2="60.0" dy="-1645.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_8" Source="ACTIVATE_TROLLEY.OUT" dx1="60.0" dx2="60.0" dy="1500.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_9" Source="ACTIVATE_HOOK.OUT" dx1="60.0" dx2="60.0" dy="1405.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_10" Source="HOOK_UP_DOWN.OUT" dx1="60.0" dx2="60.0" dy="-2745.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_11" Source="BOOL2BOOL.OUT" dx1="60.0" dx2="60.0" dy="465.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.SD_12" Source="BOOL2BOOL_1.OUT" dx1="60.0" dx2="60.0" dy="265.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL1IN" Source="SUBSCRIBE_12.RD_1" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.INT2IN" Source="SUBSCRIBE_12.RD_2" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL12IN" Source="SUBSCRIBE_12.RD_12" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL11IN" Source="SUBSCRIBE_12.RD_11" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL10IN" Source="SUBSCRIBE_12.RD_10" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL9IN" Source="SUBSCRIBE_12.RD_9" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL8IN" Source="SUBSCRIBE_12.RD_8" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL7IN" Source="SUBSCRIBE_12.RD_7" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL6IN" Source="SUBSCRIBE_12.RD_6" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL5IN" Source="SUBSCRIBE_12.RD_5" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL4IN" Source="SUBSCRIBE_12.RD_4" dx1="100.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.BOOL3IN" Source="SUBSCRIBE_12.RD_3" dx1="100.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.Text_box" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0" dx2="60.0" dy="3725.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.choose_crane" Source="TYPE_CONVERTER.BOOL6OUT" dx1="60.0" dx2="60.0" dy="3380.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.E_Stop" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.E_Stop" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.E_Stop" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.XY" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.XY" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.XY" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.N_Stop" Source="TYPE_CONVERTER.BOOL3OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.E_STOP" Source="TYPE_CONVERTER.BOOL1OUT" dx1="65.0"/>
+        <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.CTM_N_IN" Source="TYPE_CONVERTER.BOOL3OUT" dx1="65.0"/>
+        <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.FME_N_IN" Source="TYPE_CONVERTER.BOOL4OUT" dx1="65.0"/>
+        <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.FMA_N_IN" Source="TYPE_CONVERTER.BOOL5OUT" dx1="65.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.N_Stop" Source="TYPE_CONVERTER.BOOL4OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.N_Stop" Source="TYPE_CONVERTER.BOOL5OUT" dx1="60.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_1.CTM" Source="SUB1.RD_3" dx1="85.0" dx2="60.0" dy="-2020.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_1.FME" Source="SUB1.RD_4" dx1="85.0" dx2="60.0" dy="-2105.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_1.FMA" Source="SUB1.RD_5" dx1="80.0" dx2="60.0" dy="-2195.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.N_STOP" Source="START_STOP_CONTROLLER_1.CTM_O" dx1="580.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.N_STOP" Source="START_STOP_CONTROLLER_1.FME_O" dx1="580.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.N_STOP" Source="START_STOP_CONTROLLER_1.FMA_O" dx1="580.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_2.CTM" Source="SUBSCRIBE_10_2.RD_3" dx1="60.0" dx2="60.0" dy="-2025.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_2.FME" Source="SUBSCRIBE_10_2.RD_4" dx1="60.0" dx2="60.0" dy="-2105.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_2.FMA" Source="SUBSCRIBE_10_2.RD_5" dx1="60.0" dx2="60.0" dy="-2190.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.N_STOP" Source="START_STOP_CONTROLLER_2.CTM_O" dx1="680.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.N_STOP" Source="START_STOP_CONTROLLER_2.FME_O" dx1="680.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.N_STOP" Source="START_STOP_CONTROLLER_2.FMA_O" dx1="685.0"/>
+        <Connection Comment="" Destination="PERMITTER_1.N_STOP" Source="START_STOP_CONTROLLER_1.FMA_O" dx1="60.0" dx2="60.0" dy="-665.0"/>
+        <Connection Comment="" Destination="PERMITTER_1.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="-1850.0"/>
+        <Connection Comment="" Destination="PERMITTER_2.N_STOP" Source="START_STOP_CONTROLLER_2.FMA_O" dx1="60.0" dx2="60.0" dy="160.0"/>
+        <Connection Comment="" Destination="PERMITTER_2.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="-1850.0"/>
+        <Connection Comment="" Destination="BOOL2BOOL_2.IN" Source="BOOL2BOOL_2.OUT" dx1="60.0" dx2="60.0" dy="120.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.ACTIVATE_BRIDGE" Source="SUB1.RD_7" dx1="80.0" dx2="60.0" dy="-2360.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.ACTIVATE_BRIDGE" Source="SUB1.RD_7" dx1="70.0" dx2="60.0" dy="-2365.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.ACTIVATE_BRIDGE" Source="SUB1.RD_7" dx1="65.0" dx2="60.0" dy="-2365.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.ACTIVATE_BRIDGE" Source="SUBSCRIBE_10_2.RD_7" dx1="60.0" dx2="60.0" dy="-2360.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.ACTIVATE_BRIDGE" Source="SUBSCRIBE_10_2.RD_7" dx1="60.0" dx2="60.0" dy="-2360.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.ACTIVATE_BRIDGE" Source="SUBSCRIBE_10_2.RD_7" dx1="70.0" dx2="60.0" dy="-2360.0"/>
+      </DataConnections>
+      <EventConnections>
+        <Connection Comment="" Destination="INT2INT.REQ" Source="INPUT_BOX.IND" dx1="80.0"/>
+        <Connection Comment="" Destination="INPUT_BOX.INIT" Source="EMERGENCY_STOP.INITO" dx1="65.0"/>
+        <Connection Comment="" Destination="COME_TO_ME.INIT" Source="INPUT_BOX.INITO"/>
+        <Connection Comment="" Destination="FOLLOW_ME.INIT" Source="COME_TO_ME.INITO"/>
+        <Connection Comment="" Destination="FOLLOW_MACHINE.INIT" Source="FOLLOW_ME.INITO" dx1="125.0" dx2="60.0" dy="740.0"/>
+        <Connection Comment="" Destination="ACTIVATE_TROLLEY.INIT" Source="MASTER_SLAVE.INITO" dx1="115.0" dx2="60.0" dy="-1275.0"/>
+        <Connection Comment="" Destination="ACTIVATE_HOOK.INIT" Source="ACTIVATE_TROLLEY.INITO" dx1="320.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="CRANE2_COME_TO_ME.CNF" dx1="60.0" dx2="60.0" dy="-270.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="CRANE1_COME_TO_ME.CNF" dx1="60.0" dx2="60.0" dy="-270.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="CRANE1_FOLLOW_MACHINE.CNF" dx1="60.0" dx2="60.0" dy="-3880.0"/>
+        <Connection Comment="" Destination="CHOOSE_Y.INIT" Source="CHOOSE_X.INITO" dx1="1035.0"/>
+        <Connection Comment="" Destination="CHOOSE_X.INIT" Source="HOOK_UP_DOWN.INITO" dx1="60.0" dx2="60.0" dy="-2375.0"/>
+        <Connection Comment="" Destination="BOOL2BOOL_1.REQ" Source="CHOOSE_Y.IND" dx1="190.0"/>
+        <Connection Comment="" Destination="BOOL2BOOL.REQ" Source="CHOOSE_X.IND" dx1="90.0"/>
+        <Connection Comment="" Destination="CRANE_NR.INIT" Source="FOLLOW_MACHINE.INITO" dx1="60.0"/>
+        <Connection Comment="" Destination="MASTER_SLAVE.INIT" Source="CRANE_NR.INITO" dx1="290.0"/>
+        <Connection Comment="" Destination="HOOK_UP_DOWN.INIT" Source="ACTIVATE_HOOK.INITO" dx1="125.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.REQ" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="-3375.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="-3365.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.INIT" Source="SERVER1.INITO" dx1="60.0" dx2="60.0" dy="-3280.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0"/>
+        <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.TRIGGER" Source="TYPE_CONVERTER.CNF" dx1="65.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.TRIGGER_IN" Source="FUNCTIONALITY_CONTROLLER.CTM_OUT" dx1="60.0" dx2="170.0" dy="735.0"/>
+        <Connection Comment="" Destination="SERVER1.RSP" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="-260.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="CRANE2_FOLLOW_ME.CNF" dx1="60.0" dx2="60.0" dy="-2065.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="CRANE2_FOLLOW_MACHINE.CNF" dx1="60.0" dx2="60.0" dy="-3865.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.TRIGGER_IN" Source="FUNCTIONALITY_CONTROLLER.FME_OUT" dx1="60.0" dx2="165.0" dy="2750.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.TRIGGER_IN" Source="FUNCTIONALITY_CONTROLLER.FMA_OUT" dx1="60.0" dx2="170.0" dy="2660.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.CTM" Source="HMI_COME_TO_ME.TRIGGER_OUT" dx1="60.0" dx2="60.0" dy="965.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.FME" Source="HMI_FOLLOW_ME.TRIGGER_OUT" dx1="105.0" dx2="60.0" dy="-545.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0" dx2="60.0" dy="4010.0"/>
+        <Connection Comment="" Destination="CRANE_SELECTOR.FMA" Source="HMI_FOLLOW_MACHINE.TRIGGER_OUT" dx1="105.0" dx2="60.0" dy="-1545.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.MPS_E" Source="SENSORS_ACTUATORS_1.S_A_E"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.MPS_E" Source="SENSORS_ACTUATORS_1.S_A_E" dx1="420.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.MPS_E" Source="SENSORS_ACTUATORS_2.S_A_E" dx1="525.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.MPS_E" Source="SENSORS_ACTUATORS_2.S_A_E"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.MPS_E" Source="SENSORS_ACTUATORS_2.S_A_E" dx1="530.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_ME.REQ" Source="HMI_COME_TO_ME.UPDATER_OUT" dx1="60.0" dx2="170.0" dy="1055.0"/>
+        <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.REQ" Source="HMI_COME_TO_ME.UPDATER_OUT" dx1="60.0" dx2="175.0" dy="1050.0"/>
+        <Connection Comment="" Destination="FME_FMA_DECIDER.FME_TRIGGER" Source="HMI_FOLLOW_ME.TRIGGER_OUT" dx1="110.0" dx2="170.0" dy="-545.0"/>
+        <Connection Comment="" Destination="FME_FMA_DECIDER.FMA_TRIGGER" Source="HMI_FOLLOW_MACHINE.TRIGGER_OUT" dx1="105.0" dx2="165.0" dy="-1550.0"/>
+        <Connection Comment="" Destination="HMI_COME_TO_ME.UPDATER_IN" Source="FME_FMA_DECIDER.TRIGGER" dx1="60.0" dx2="170.0" dy="-160.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="CRANE1_FOLLOW_ME.CNF" dx1="60.0" dx2="60.0" dy="-2080.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.MPS_E" Source="SENSORS_ACTUATORS_1.S_A_E" dx1="425.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.REQ" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="-3360.0"/>
+        <Connection Comment="" Destination="SUBSCRIBE_10_2.INIT" Source="SERVER2.INITO" dx1="60.0" dx2="60.0" dy="-2020.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0" dx2="60.0" dy="-265.0"/>
+        <Connection Comment="" Destination="SUB1.INIT" Source="SERVER1.INITO" dx1="65.0" dx2="85.0" dy="-3275.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="-1575.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="-1570.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="-1565.0"/>
+        <Connection Comment="" Destination="EMERGENCY_STOP.INIT" Source="PUBLISH_12.INITO" dx1="60.0" dx2="60.0" dy="-270.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="EMERGENCY_STOP.IND" dx1="60.0" dx2="60.0" dy="-715.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="INT2INT.CNF" dx1="60.0" dx2="60.0" dy="-470.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="COME_TO_ME.IND" dx1="160.0" dx2="60.0" dy="-540.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="FOLLOW_ME.IND" dx1="130.0" dx2="60.0" dy="-545.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="FOLLOW_MACHINE.IND" dx1="60.0" dx2="60.0" dy="580.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="CRANE_NR.IND" dx1="60.0" dx2="60.0" dy="-2140.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="MASTER_SLAVE.IND" dx1="120.0" dx2="60.0" dy="-1445.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="ACTIVATE_TROLLEY.IND" dx1="60.0" dx2="60.0" dy="1860.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="ACTIVATE_HOOK.IND" dx1="60.0" dx2="60.0" dy="1755.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="HOOK_UP_DOWN.IND" dx1="60.0" dx2="60.0" dy="-2545.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="BOOL2BOOL.CNF" dx1="60.0" dx2="60.0" dy="730.0"/>
+        <Connection Comment="" Destination="PUBLISH_12.REQ" Source="BOOL2BOOL_1.CNF" dx1="60.0" dx2="60.0" dy="525.0"/>
+        <Connection Comment="" Destination="TYPE_CONVERTER.REQ" Source="SUBSCRIBE_12.IND" dx1="100.0"/>
+        <Connection Comment="" Destination="PUBLISH_10.INIT" Source="SUBSCRIBE_12.INITO" dx1="60.0" dx2="60.0" dy="-265.0"/>
+        <Connection Comment="" Destination="CRANE_1.INIT" Source="SUBSCRIBE_12.INITO" dx1="60.0" dx2="60.0" dy="750.0"/>
+        <Connection Comment="" Destination="CEANE_2.INIT" Source="SUBSCRIBE_12.INITO" dx1="60.0" dx2="60.0" dy="1500.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_1.REQ" Source="SUB1.IND" dx1="70.0" dx2="60.0" dy="-1555.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_1.INIT" Source="SUB1.INITO" dx1="75.0" dx2="60.0" dy="-1475.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_ME.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="580.0"/>
+        <Connection Comment="" Destination="CRANE1_COME_TO_ME.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="580.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.REQ" Source="START_STOP_CONTROLLER_2.CNF" dx1="680.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="START_STOP_CONTROLLER_2.CNF" dx1="685.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.REQ" Source="START_STOP_CONTROLLER_2.CNF" dx1="680.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="580.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="-1560.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.REQ" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="-3360.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.REQ" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="-3360.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="-3355.0"/>
+        <Connection Comment="" Destination="SERVER2.RSP" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="-280.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.INIT" Source="SUBSCRIBE_10_2.INITO" dx1="60.0" dx2="60.0" dy="-1470.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_2.INIT" Source="SUBSCRIBE_10_2.INITO" dx1="60.0" dx2="60.0" dy="-1470.0"/>
+        <Connection Comment="" Destination="CRANE2_COME_TO_ME.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="-1555.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_ME.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="-1560.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="-1560.0"/>
+        <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="-1550.0"/>
+        <Connection Comment="" Destination="START_STOP_CONTROLLER_2.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="-1555.0"/>
+        <Connection Comment="" Destination="CEANE_2.REQ" Source="CRANE_SELECTOR.C2" dx1="60.0" dx2="60.0" dy="-1735.0"/>
+        <Connection Comment="" Destination="CRANE_1.REQ" Source="CRANE_SELECTOR.C1" dx1="60.0" dx2="60.0" dy="-1645.0"/>
+        <Connection Comment="" Destination="RESPONSE.REQ" Source="CRANE_1.CNF" dx1="60.0" dx2="60.0" dy="1055.0"/>
+        <Connection Comment="" Destination="RESPONSE.REQ" Source="CEANE_2.CNF" dx1="60.0" dx2="60.0" dy="-445.0"/>
+        <Connection Comment="" Destination="REQUEST.REQ" Source="CRANE_SELECTOR.C1" dx1="60.0" dx2="60.0" dy="-1645.0"/>
+        <Connection Comment="" Destination="REQUEST.REQ" Source="CRANE_SELECTOR.C2" dx1="60.0" dx2="60.0" dy="-1725.0"/>
+        <Connection Comment="" Destination="PERMITTER_1.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="60.0" dx2="60.0" dy="-210.0"/>
+        <Connection Comment="" Destination="PERMITTER_1.TRIGGER_IN" Source="SENSORS_ACTUATORS_1.S_A_E" dx1="60.0" dx2="60.0" dy="-360.0"/>
+        <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="PERMITTER_1.TRIGGER_OUT" dx1="660.0"/>
+        <Connection Comment="" Destination="PERMITTER_2.REQ" Source="START_STOP_CONTROLLER_2.CNF" dx1="60.0" dx2="60.0" dy="620.0"/>
+        <Connection Comment="" Destination="PERMITTER_2.TRIGGER_IN" Source="SENSORS_ACTUATORS_2.S_A_E" dx1="60.0" dx2="60.0" dy="-350.0"/>
+        <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="PERMITTER_2.TRIGGER_OUT" dx1="765.0"/>
+      </EventConnections>
+    </SubAppNetwork>
+  </Application>
+  <Device Comment="" Name="HMI_DEVICE" Type="FORTE_PC" x="2700.0" y="2400.0">
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61497&quot;"/>
+    <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="146,239,205"/>
+    <Resource Comment="" Name="EMB_RES" Type="EMB_RES" x="0.0" y="0.0">
+      <FBNetwork>
+        <FB Comment="" Name="HMI_FOLLOW_ME" Type="HMI_FOLLOW_ME" x="3800.0" y="2800.0"/>
+        <FB Comment="" Name="HMI_COME_TO_ME" Type="HMI_COME_TO_ME" x="3800.0" y="1400.0"/>
+        <FB Comment="" Name="TYPE_CONVERTER" Type="TYPE_CONVERTER_1I_11B" x="5900.0" y="600.0"/>
+        <FB Comment="" Name="FUNCTIONALITY_CONTROLLER" Type="FUNCTIONALITY_CONTROLLER" x="5800.0" y="2600.0"/>
+        <FB Comment="" Name="HMI_FOLLOW_MACHINE" Type="HMI_FOLLOW_MACHINE" x="4600.0" y="3500.0"/>
+        <FB Comment="" Name="CRANE_1" Type="CLIENT_6_0" x="2500.0" y="4800.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1/SERVER1]"/>
+        </FB>
+        <FB Comment="" Name="CEANE_2" Type="CLIENT_6_0" x="2500.0" y="7000.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE2_IP%:4840#/Objects/1:CRANE2/SERVER2]"/>
+        </FB>
+        <FB Comment="" Name="CRANE_SELECTOR" Type="CRANE_SELECTOR" x="7200.0" y="7500.0"/>
+        <FB Comment="" Name="FME_FMA_DECIDER" Type="FME_FMA_DECIDER" x="3800.0" y="4700.0"/>
+        <FB Comment="" Name="PUBLISH_10" Type="PUBLISH_10" x="8200.0" y="5200.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.0.0.2:61497"/>
+        </FB>
+        <FB Comment="" Name="SUBSCRIBE_12" Type="SUBSCRIBE_12" x="7600.0" y="1000.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.0.0.1:61496"/>
+        </FB>
+        <FB Comment="" Name="REQUEST" Type="DISPLAY_LOCAL_TIME" x="800.0" y="6100.0"/>
+        <FB Comment="" Name="RESPONSE" Type="DISPLAY_LOCAL_TIME" x="800.0" y="6800.0"/>
+        <DataConnections>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.Choose_X" Source="TYPE_CONVERTER.BOOL11OUT" dx1="60.0" dx2="60.0" dy="145.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.Choose_X" Source="TYPE_CONVERTER.BOOL11OUT" dx1="60.0" dx2="60.0" dy="845.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.Choose_Y" Source="TYPE_CONVERTER.BOOL12OUT" dx1="60.0" dx2="60.0" dy="145.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.Choose_Y" Source="TYPE_CONVERTER.BOOL12OUT" dx1="60.0" dx2="60.0" dy="845.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.Choose_Y" Source="TYPE_CONVERTER.BOOL12OUT" dx1="60.0" dx2="60.0" dy="1345.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.CTM_X_I" Source="HMI_COME_TO_ME.Output_X" dx1="1185.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.CTM_Y_I" Source="HMI_COME_TO_ME.Output_Y" dx1="1185.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.FME_X_I" Source="HMI_FOLLOW_ME.Output_X" dx1="1210.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.FME_Y_I" Source="HMI_FOLLOW_ME.Output_Y" dx1="1210.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.FMA_X_I" Source="HMI_FOLLOW_MACHINE.Output_X" dx1="810.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.FMA_Y_I" Source="HMI_FOLLOW_MACHINE.Output_Y" dx1="810.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.CTM_X" Source="HMI_COME_TO_ME.Output_X" dx1="60.0" dx2="60.0" dy="785.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.CTM_Y" Source="HMI_COME_TO_ME.Output_Y" dx1="60.0" dx2="60.0" dy="785.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.CTM_X" Source="HMI_COME_TO_ME.Output_X" dx1="60.0" dx2="60.0" dy="1135.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.CTM_Y" Source="HMI_COME_TO_ME.Output_Y" dx1="60.0" dx2="60.0" dy="1135.0"/>
+          <Connection Comment="" Destination="FME_FMA_DECIDER.X_FME" Source="HMI_FOLLOW_ME.Output_X" dx1="60.0" dx2="60.0" dy="950.0"/>
+          <Connection Comment="" Destination="FME_FMA_DECIDER.Y_FME" Source="HMI_FOLLOW_ME.Output_Y" dx1="60.0" dx2="60.0" dy="950.0"/>
+          <Connection Comment="" Destination="FME_FMA_DECIDER.X_FMA" Source="HMI_FOLLOW_MACHINE.Output_X" dx1="60.0" dx2="60.0" dy="685.0"/>
+          <Connection Comment="" Destination="FME_FMA_DECIDER.Y_FMA" Source="HMI_FOLLOW_MACHINE.Output_Y" dx1="60.0" dx2="60.0" dy="685.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.FME_FMA_X" Source="FME_FMA_DECIDER.X_FME_FMA" dx1="60.0" dx2="60.0" dy="-1480.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.FME_FMA_Y" Source="FME_FMA_DECIDER.Y_FME_FMA" dx1="60.0" dx2="60.0" dy="-1480.0"/>
+          <Connection Comment="" Destination="CRANE_1.SD_1" Source="CRANE_SELECTOR.CTM_X_1" dx1="60.0" dx2="60.0" dy="-1350.0"/>
+          <Connection Comment="" Destination="CRANE_1.SD_2" Source="CRANE_SELECTOR.CTM_Y_1" dx1="60.0" dx2="60.0" dy="-1350.0"/>
+          <Connection Comment="" Destination="CRANE_1.SD_3" Source="CRANE_SELECTOR.FME_X_1" dx1="60.0" dx2="60.0" dy="-1350.0"/>
+          <Connection Comment="" Destination="CRANE_1.SD_4" Source="CRANE_SELECTOR.FME_Y_1" dx1="60.0" dx2="60.0" dy="-1350.0"/>
+          <Connection Comment="" Destination="CRANE_1.SD_5" Source="CRANE_SELECTOR.FMA_X_1" dx1="60.0" dx2="60.0" dy="-1350.0"/>
+          <Connection Comment="" Destination="CRANE_1.SD_6" Source="CRANE_SELECTOR.FMA_Y_1" dx1="60.0" dx2="60.0" dy="-1350.0"/>
+          <Connection Comment="" Destination="CEANE_2.SD_1" Source="CRANE_SELECTOR.CTM_X_2" dx1="60.0" dx2="60.0" dy="-505.0"/>
+          <Connection Comment="" Destination="CEANE_2.SD_2" Source="CRANE_SELECTOR.CTM_Y_2" dx1="60.0" dx2="60.0" dy="-505.0"/>
+          <Connection Comment="" Destination="CEANE_2.SD_3" Source="CRANE_SELECTOR.FME_X_2" dx1="60.0" dx2="60.0" dy="-505.0"/>
+          <Connection Comment="" Destination="CEANE_2.SD_4" Source="CRANE_SELECTOR.FME_Y_2" dx1="60.0" dx2="60.0" dy="-505.0"/>
+          <Connection Comment="" Destination="CEANE_2.SD_5" Source="CRANE_SELECTOR.FMA_X_2" dx1="60.0" dx2="60.0" dy="-505.0"/>
+          <Connection Comment="" Destination="CEANE_2.SD_6" Source="CRANE_SELECTOR.FMA_Y_2" dx1="60.0" dx2="60.0" dy="-505.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.Choose_X" Source="TYPE_CONVERTER.BOOL11OUT" dx1="60.0" dx2="60.0" dy="1345.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_1" Source="TYPE_CONVERTER.BOOL1OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_2" Source="TYPE_CONVERTER.INT2OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_3" Source="TYPE_CONVERTER.BOOL3OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_4" Source="TYPE_CONVERTER.BOOL4OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_5" Source="TYPE_CONVERTER.BOOL5OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_6" Source="TYPE_CONVERTER.BOOL6OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_7" Source="TYPE_CONVERTER.BOOL7OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_8" Source="TYPE_CONVERTER.BOOL8OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_9" Source="TYPE_CONVERTER.BOOL9OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.SD_10" Source="TYPE_CONVERTER.BOOL10OUT" dx1="665.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL1IN" Source="SUBSCRIBE_12.RD_1" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.INT2IN" Source="SUBSCRIBE_12.RD_2" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL12IN" Source="SUBSCRIBE_12.RD_12" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL11IN" Source="SUBSCRIBE_12.RD_11" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL10IN" Source="SUBSCRIBE_12.RD_10" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL9IN" Source="SUBSCRIBE_12.RD_9" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL8IN" Source="SUBSCRIBE_12.RD_8" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL7IN" Source="SUBSCRIBE_12.RD_7" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL6IN" Source="SUBSCRIBE_12.RD_6" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL5IN" Source="SUBSCRIBE_12.RD_5" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL4IN" Source="SUBSCRIBE_12.RD_4" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.BOOL3IN" Source="SUBSCRIBE_12.RD_3" dx1="60.0" dx2="60.0" dy="-2325.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.Text_box" Source="TYPE_CONVERTER.INT2OUT" dx1="165.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.choose_crane" Source="TYPE_CONVERTER.BOOL6OUT" dx1="165.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.E_Stop" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0" dx2="60.0" dy="485.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.E_Stop" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0" dx2="60.0" dy="1140.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.E_Stop" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0" dx2="60.0" dy="1490.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.XY" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0" dx2="60.0" dy="525.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.XY" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0" dx2="60.0" dy="1185.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.XY" Source="TYPE_CONVERTER.INT2OUT" dx1="60.0" dx2="60.0" dy="1535.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.N_Stop" Source="TYPE_CONVERTER.BOOL3OUT" dx1="60.0" dx2="60.0" dy="440.0"/>
+          <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.E_STOP" Source="TYPE_CONVERTER.BOOL1OUT" dx1="60.0" dx2="60.0" dy="1210.0"/>
+          <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.CTM_N_IN" Source="TYPE_CONVERTER.BOOL3OUT" dx1="60.0" dx2="60.0" dy="1000.0"/>
+          <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.FME_N_IN" Source="TYPE_CONVERTER.BOOL4OUT" dx1="60.0" dx2="60.0" dy="1000.0"/>
+          <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.FMA_N_IN" Source="TYPE_CONVERTER.BOOL5OUT" dx1="60.0" dx2="60.0" dy="1000.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.N_Stop" Source="TYPE_CONVERTER.BOOL4OUT"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.N_Stop" Source="TYPE_CONVERTER.BOOL5OUT"/>
+        </DataConnections>
+        <EventConnections>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0" dx2="60.0" dy="1100.0"/>
+          <Connection Comment="" Destination="FUNCTIONALITY_CONTROLLER.TRIGGER" Source="TYPE_CONVERTER.CNF" dx1="60.0" dx2="60.0" dy="1000.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.TRIGGER_IN" Source="FUNCTIONALITY_CONTROLLER.CTM_OUT" dx1="60.0" dx2="60.0" dy="-555.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.REQ" Source="TYPE_CONVERTER.CNF" dx1="60.0" dx2="60.0" dy="1600.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.TRIGGER_IN" Source="FUNCTIONALITY_CONTROLLER.FME_OUT" dx1="60.0" dx2="60.0" dy="100.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.TRIGGER_IN" Source="FUNCTIONALITY_CONTROLLER.FMA_OUT" dx1="60.0" dx2="60.0" dy="405.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.CTM" Source="HMI_COME_TO_ME.TRIGGER_OUT" dx1="1185.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.FME" Source="HMI_FOLLOW_ME.TRIGGER_OUT" dx1="1210.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.REQ" Source="TYPE_CONVERTER.CNF" dx1="165.0"/>
+          <Connection Comment="" Destination="CRANE_SELECTOR.FMA" Source="HMI_FOLLOW_MACHINE.TRIGGER_OUT" dx1="810.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_ME.REQ" Source="HMI_COME_TO_ME.UPDATER_OUT" dx1="60.0" dx2="60.0" dy="655.0"/>
+          <Connection Comment="" Destination="HMI_FOLLOW_MACHINE.REQ" Source="HMI_COME_TO_ME.UPDATER_OUT" dx1="60.0" dx2="60.0" dy="1005.0"/>
+          <Connection Comment="" Destination="FME_FMA_DECIDER.FME_TRIGGER" Source="HMI_FOLLOW_ME.TRIGGER_OUT" dx1="60.0" dx2="60.0" dy="905.0"/>
+          <Connection Comment="" Destination="FME_FMA_DECIDER.FMA_TRIGGER" Source="HMI_FOLLOW_MACHINE.TRIGGER_OUT" dx1="60.0" dx2="60.0" dy="600.0"/>
+          <Connection Comment="" Destination="HMI_COME_TO_ME.UPDATER_IN" Source="FME_FMA_DECIDER.TRIGGER" dx1="60.0" dx2="60.0" dy="-1605.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.REQ" Source="TYPE_CONVERTER.CNF" dx1="665.0"/>
+          <Connection Comment="" Destination="TYPE_CONVERTER.REQ" Source="SUBSCRIBE_12.IND" dx1="60.0" dx2="60.0" dy="-2240.0"/>
+          <Connection Comment="" Destination="PUBLISH_10.INIT" Source="SUBSCRIBE_12.INITO" dx1="60.0" dx2="60.0" dy="2100.0"/>
+          <Connection Comment="" Destination="SUBSCRIBE_12.INIT" Source="START.COLD" dx1="3510.0"/>
+          <Connection Comment="" Destination="SUBSCRIBE_12.INIT" Source="START.WARM" dx1="3510.0"/>
+          <Connection Comment="" Destination="CRANE_1.INIT" Source="SUBSCRIBE_12.INITO" dx1="60.0" dx2="60.0" dy="1900.0"/>
+          <Connection Comment="" Destination="CEANE_2.INIT" Source="SUBSCRIBE_12.INITO"/>
+          <Connection Comment="" Destination="CEANE_2.REQ" Source="CRANE_SELECTOR.C2"/>
+          <Connection Comment="" Destination="CRANE_1.REQ" Source="CRANE_SELECTOR.C1"/>
+          <Connection Comment="" Destination="RESPONSE.REQ" Source="CRANE_1.CNF"/>
+          <Connection Comment="" Destination="RESPONSE.REQ" Source="CEANE_2.CNF"/>
+          <Connection Comment="" Destination="REQUEST.REQ" Source="CRANE_SELECTOR.C1"/>
+          <Connection Comment="" Destination="REQUEST.REQ" Source="CRANE_SELECTOR.C2"/>
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Comment="" Name="CRANE_1_DEVICCE" Type="FORTE_PC" x="4300.0" y="2400.0">
+    <Parameter Name="MGR_ID" Value="%CRANE1_IP%:61499"/>
+    <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="136,138,133"/>
+    <Resource Comment="" Name="EMB_RES" Type="EMB_RES" x="0.0" y="0.0">
+      <FBNetwork>
+        <FB Comment="" Name="CRANE1_COME_TO_ME" Type="CRANE1_COME_TO_ME" x="5100.0" y="200.0"/>
+        <FB Comment="" Name="CRANE1_FOLLOW_MACHINE" Type="CRANE1_FOLLOW_MACHINE" x="5100.0" y="2700.0"/>
+        <FB Comment="" Name="CRANE1_FOLLOW_ME" Type="CRANE1_FOLLOW_ME" x="3200.0" y="1800.0"/>
+        <FB Comment="" Name="SERVER1" Type="SERVER_0_6" x="8105.0" y="1500.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1]"/>
+        </FB>
+        <FB Comment="" Name="START_STOP_CONTROLLER_1" Type="START_STOP_CONTROLLER" x="3200.0" y="300.0"/>
+        <FB Comment="" Name="SENSORS_ACTUATORS_1" Type="SENSORS_ACTUATORS" x="700.0" y="1000.0"/>
+        <FB Comment="" Name="SUB1" Type="SUBSCRIBE_10" x="7100.0" y="200.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.0.0.2:61497"/>
+        </FB>
+        <FB Comment="" Name="PERMITTER_1" Type="PERMITTER" x="12000.0" y="3800.0"/>
+        <DataConnections>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.X_B_LOC" Source="SERVER1.RD_1" dx1="60.0" dx2="60.0" dy="-650.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.Y_T_LOC" Source="SERVER1.RD_2" dx1="60.0" dx2="60.0" dy="-650.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.X_B_LOC" Source="SERVER1.RD_3" dx1="60.0" dx2="60.0" dy="65.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.Y_T_LOC" Source="SERVER1.RD_4" dx1="60.0" dx2="60.0" dy="65.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.X_B_LOC" Source="SERVER1.RD_5" dx1="60.0" dx2="60.0" dy="430.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.Y_T_LOC" Source="SERVER1.RD_6" dx1="60.0" dx2="60.0" dy="430.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.N_STOP" Source="START_STOP_CONTROLLER_1.CTM_O" dx1="445.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.N_STOP" Source="START_STOP_CONTROLLER_1.FME_O" dx1="60.0" dx2="60.0" dy="750.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.N_STOP" Source="START_STOP_CONTROLLER_1.FMA_O" dx1="445.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_ACTIVATE_MP" Source="CRANE1_COME_TO_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_BRIDGE_F_I" Source="CRANE1_COME_TO_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_BRIGDE_B_I" Source="CRANE1_COME_TO_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_TROLLEY_F_I" Source="CRANE1_COME_TO_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_TROLLEY_B_I" Source="CRANE1_COME_TO_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_HOOK_U_I" Source="CRANE1_COME_TO_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.CTM_HOOK_D_I" Source="CRANE1_COME_TO_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_ACTIVATE_MP" Source="CRANE1_FOLLOW_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_BRIDGE_F_I" Source="CRANE1_FOLLOW_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_BRIGDE_B_I" Source="CRANE1_FOLLOW_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_TROLLEY_F_I" Source="CRANE1_FOLLOW_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_TROLLEY_B_I" Source="CRANE1_FOLLOW_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_HOOK_U_I" Source="CRANE1_FOLLOW_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FME_HOOK_D_I" Source="CRANE1_FOLLOW_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_ACTIVATE_MP" Source="CRANE1_FOLLOW_MACHINE.A_D_MPS" dx1="60.0" dx2="60.0" dy="-255.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_BRIDGE_F_I" Source="CRANE1_FOLLOW_MACHINE.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_BRIGDE_B_I" Source="CRANE1_FOLLOW_MACHINE.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_TROLLEY_F_I" Source="CRANE1_FOLLOW_MACHINE.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_TROLLEY_B_I" Source="CRANE1_FOLLOW_MACHINE.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_HOOK_U_I" Source="CRANE1_FOLLOW_MACHINE.HOOK_U" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.FMA_HOOK_D_I" Source="CRANE1_FOLLOW_MACHINE.HOOK_D" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_1.BRIDGE_P" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.BRIDGE_P" Source="SENSORS_ACTUATORS_1.BRIDGE_P" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_1.BRIDGE_P" dx1="640.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_1.TROLLEY_P" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.TROLLEY_P" Source="SENSORS_ACTUATORS_1.TROLLEY_P" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_1.TROLLEY_P" dx1="640.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.HOOK_P" Source="SENSORS_ACTUATORS_1.HOOK_P" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.HOOK_P" Source="SENSORS_ACTUATORS_1.HOOK_P" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.HOOK_P" Source="SENSORS_ACTUATORS_1.HOOK_P" dx1="640.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_1.CRANE_DIS_S" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.CRANE_DIS_S" Source="SENSORS_ACTUATORS_1.CRANE_DIS_S" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_1.CRANE_DIS_S" dx1="640.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.E_STOP" Source="SUB1.RD_1" dx1="60.0" dx2="60.0" dy="950.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.TEXT_BOX" Source="SUB1.RD_2" dx1="60.0" dx2="60.0" dy="40.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.TEXT_BOX" Source="SUB1.RD_2" dx1="60.0" dx2="60.0" dy="840.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.TEXT_BOX" Source="SUB1.RD_2" dx1="60.0" dx2="60.0" dy="1290.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_1.CTM" Source="SUB1.RD_3" dx1="60.0" dx2="60.0" dy="-120.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_1.FME" Source="SUB1.RD_4" dx1="60.0" dx2="60.0" dy="-120.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_1.FMA" Source="SUB1.RD_5" dx1="60.0" dx2="60.0" dy="-120.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.CHOOSE_CRANE" Source="SUB1.RD_6" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.CHOOSE_CRANE" Source="SUB1.RD_6" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.CHOOSE_CRANE" Source="SUB1.RD_6" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.ACTIVATE_TROLLEY" Source="SUB1.RD_8" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.ACTIVATE_TROLLEY" Source="SUB1.RD_8" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.ACTIVATE_TROLLEY" Source="SUB1.RD_8" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.HOOK_U_IN" Source="SUB1.RD_9" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.HOOK_U_IN" Source="SUB1.RD_9" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.HOOK_U_IN" Source="SUB1.RD_9" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.HOOK_D_IN" Source="SUB1.RD_10" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.HOOK_D_IN" Source="SUB1.RD_10" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.HOOK_D_IN" Source="SUB1.RD_10" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="PERMITTER_1.E_STOP" Source="SUB1.RD_1"/>
+          <Connection Comment="" Destination="PERMITTER_1.N_STOP" Source="START_STOP_CONTROLLER_1.FMA_O"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.ACTIVATE_BRIDGE" Source="SUB1.RD_7"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.ACTIVATE_BRIDGE" Source="SUB1.RD_7"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.ACTIVATE_BRIDGE" Source="SUB1.RD_7"/>
+        </DataConnections>
+        <EventConnections>
+          <Connection Comment="" Destination="SERVER1.RSP" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="120.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.REQ" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="-690.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="555.0"/>
+          <Connection Comment="" Destination="SERVER1.RSP" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="120.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.REQ" Source="SERVER1.IND" dx1="60.0" dx2="60.0" dy="105.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="60.0" dx2="60.0" dy="750.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="445.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="START_STOP_CONTROLLER_1.CNF" dx1="445.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="CRANE1_COME_TO_ME.CNF" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="CRANE1_FOLLOW_MACHINE.CNF" dx1="60.0" dx2="60.0" dy="-850.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="CRANE1_FOLLOW_ME.CNF" dx1="60.0" dx2="60.0" dy="-400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.INIT" Source="SERVER1.INITO" dx1="60.0" dx2="60.0" dy="-205.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.MPS_E" Source="SENSORS_ACTUATORS_1.S_A_E" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.MPS_E" Source="SENSORS_ACTUATORS_1.S_A_E" dx1="1590.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.MPS_E" Source="SENSORS_ACTUATORS_1.S_A_E" dx1="640.0"/>
+          <Connection Comment="" Destination="SUB1.INIT" Source="SERVER1.INITO" dx1="60.0" dx2="60.0" dy="-650.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_1.INIT" Source="SUB1.INITO" dx1="60.0" dx2="60.0" dy="50.0"/>
+          <Connection Comment="" Destination="CRANE1_COME_TO_ME.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="-40.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_ME.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="755.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_1.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="355.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_1.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="50.0"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="SUB1.IND" dx1="60.0" dx2="60.0" dy="1205.0"/>
+          <Connection Comment="" Destination="SERVER1.INIT" Source="START.COLD" dx1="3765.0"/>
+          <Connection Comment="" Destination="SERVER1.INIT" Source="START.WARM" dx1="3765.0"/>
+          <Connection Comment="" Destination="PERMITTER_1.TRIGGER_IN" Source="SENSORS_ACTUATORS_1.S_A_E"/>
+          <Connection Comment="" Destination="PERMITTER_1.REQ" Source="START_STOP_CONTROLLER_1.CNF"/>
+          <Connection Comment="" Destination="CRANE1_FOLLOW_MACHINE.REQ" Source="PERMITTER_1.TRIGGER_OUT"/>
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Comment="" Name="CRANE_2_DEVICCE" Type="FORTE_PC" x="5900.0" y="2400.0">
+    <Parameter Name="MGR_ID" Value="%CRANE2_IP%:61499"/>
+    <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="114,159,207"/>
+    <Resource Comment="" Name="EMB_RES" Type="EMB_RES" x="0.0" y="0.0">
+      <FBNetwork>
+        <FB Comment="" Name="CRANE2_FOLLOW_ME" Type="CRANE2_FOLLOW_ME" x="3000.0" y="2000.0"/>
+        <FB Comment="" Name="SUBSCRIBE_10_2" Type="SUBSCRIBE_10" x="7100.0" y="400.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.0.0.2:61497"/>
+        </FB>
+        <FB Comment="" Name="CRANE2_COME_TO_ME" Type="CRANE2_COME_TO_ME" x="4900.0" y="400.0"/>
+        <FB Comment="" Name="START_STOP_CONTROLLER_2" Type="START_STOP_CONTROLLER" x="3100.0" y="400.0"/>
+        <FB Comment="" Name="SERVER2" Type="SERVER_0_6" x="8100.0" y="1900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE2]"/>
+        </FB>
+        <FB Comment="" Name="CRANE2_FOLLOW_MACHINE" Type="CRANE2_FOLLOW_MACHINE" x="4900.0" y="2900.0"/>
+        <FB Comment="" Name="SENSORS_ACTUATORS_2" Type="SENSORS_ACTUATORS" x="900.0" y="1200.0"/>
+        <FB Comment="" Name="PERMITTER_2" Type="PERMITTER" x="11900.0" y="8400.0"/>
+        <DataConnections>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.TEXT_BOX" Source="SUBSCRIBE_10_2.RD_2" dx1="60.0" dx2="60.0" dy="840.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.CHOOSE_CRANE" Source="SUBSCRIBE_10_2.RD_6" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.ACTIVATE_TROLLEY" Source="SUBSCRIBE_10_2.RD_8" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.HOOK_U_IN" Source="SUBSCRIBE_10_2.RD_9" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.HOOK_D_IN" Source="SUBSCRIBE_10_2.RD_10" dx1="60.0" dx2="60.0" dy="715.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.TEXT_BOX" Source="SUBSCRIBE_10_2.RD_2" dx1="60.0" dx2="60.0" dy="40.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.CHOOSE_CRANE" Source="SUBSCRIBE_10_2.RD_6" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.ACTIVATE_TROLLEY" Source="SUBSCRIBE_10_2.RD_8" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.HOOK_U_IN" Source="SUBSCRIBE_10_2.RD_9" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.HOOK_D_IN" Source="SUBSCRIBE_10_2.RD_10" dx1="60.0" dx2="60.0" dy="-85.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_2.CTM" Source="SUBSCRIBE_10_2.RD_3" dx1="60.0" dx2="60.0" dy="-170.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_2.FME" Source="SUBSCRIBE_10_2.RD_4" dx1="60.0" dx2="60.0" dy="-170.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_2.FMA" Source="SUBSCRIBE_10_2.RD_5" dx1="60.0" dx2="60.0" dy="-170.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.N_STOP" Source="START_STOP_CONTROLLER_2.CTM_O" dx1="370.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.N_STOP" Source="START_STOP_CONTROLLER_2.FME_O" dx1="60.0" dx2="60.0" dy="800.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.X_B_LOC" Source="SERVER2.RD_1" dx1="60.0" dx2="60.0" dy="-750.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.Y_T_LOC" Source="SERVER2.RD_2" dx1="60.0" dx2="60.0" dy="-750.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.X_B_LOC" Source="SERVER2.RD_3" dx1="60.0" dx2="60.0" dy="-35.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.Y_T_LOC" Source="SERVER2.RD_4" dx1="60.0" dx2="60.0" dy="-35.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.N_STOP" Source="START_STOP_CONTROLLER_2.FMA_O" dx1="370.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.X_B_LOC" Source="SERVER2.RD_5" dx1="60.0" dx2="60.0" dy="330.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.Y_T_LOC" Source="SERVER2.RD_6" dx1="60.0" dx2="60.0" dy="330.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.TEXT_BOX" Source="SUBSCRIBE_10_2.RD_2" dx1="60.0" dx2="60.0" dy="1290.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.CHOOSE_CRANE" Source="SUBSCRIBE_10_2.RD_6" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.ACTIVATE_TROLLEY" Source="SUBSCRIBE_10_2.RD_8" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.HOOK_U_IN" Source="SUBSCRIBE_10_2.RD_9" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.HOOK_D_IN" Source="SUBSCRIBE_10_2.RD_10" dx1="60.0" dx2="60.0" dy="1165.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_ACTIVATE_MP" Source="CRANE2_COME_TO_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_BRIDGE_F_I" Source="CRANE2_COME_TO_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_BRIGDE_B_I" Source="CRANE2_COME_TO_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_TROLLEY_F_I" Source="CRANE2_COME_TO_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_TROLLEY_B_I" Source="CRANE2_COME_TO_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_HOOK_U_I" Source="CRANE2_COME_TO_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.CTM_HOOK_D_I" Source="CRANE2_COME_TO_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_ACTIVATE_MP" Source="CRANE2_FOLLOW_ME.A_D_MPS" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_BRIDGE_F_I" Source="CRANE2_FOLLOW_ME.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_BRIGDE_B_I" Source="CRANE2_FOLLOW_ME.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_TROLLEY_F_I" Source="CRANE2_FOLLOW_ME.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_TROLLEY_B_I" Source="CRANE2_FOLLOW_ME.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_HOOK_U_I" Source="CRANE2_FOLLOW_ME.HOOK_U" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FME_HOOK_D_I" Source="CRANE2_FOLLOW_ME.HOOK_D" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_ACTIVATE_MP" Source="CRANE2_FOLLOW_MACHINE.A_D_MPS" dx1="60.0" dx2="60.0" dy="-255.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.E_STOP" Source="SUBSCRIBE_10_2.RD_1" dx1="60.0" dx2="60.0" dy="950.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_BRIDGE_F_I" Source="CRANE2_FOLLOW_MACHINE.BRIDGE_F" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_BRIGDE_B_I" Source="CRANE2_FOLLOW_MACHINE.BRIDGE_B" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_TROLLEY_F_I" Source="CRANE2_FOLLOW_MACHINE.TROLLEY_F" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_TROLLEY_B_I" Source="CRANE2_FOLLOW_MACHINE.TROLLEY_B" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_HOOK_U_I" Source="CRANE2_FOLLOW_MACHINE.HOOK_U" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.FMA_HOOK_D_I" Source="CRANE2_FOLLOW_MACHINE.HOOK_D" dx1="60.0" dx2="60.0" dy="-210.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_2.BRIDGE_P" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.BRIDGE_P" Source="SENSORS_ACTUATORS_2.BRIDGE_P" dx1="440.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.BRIDGE_P" Source="SENSORS_ACTUATORS_2.BRIDGE_P" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_2.TROLLEY_P" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.TROLLEY_P" Source="SENSORS_ACTUATORS_2.TROLLEY_P" dx1="440.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.TROLLEY_P" Source="SENSORS_ACTUATORS_2.TROLLEY_P" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.HOOK_P" Source="SENSORS_ACTUATORS_2.HOOK_P" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.HOOK_P" Source="SENSORS_ACTUATORS_2.HOOK_P" dx1="440.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.HOOK_P" Source="SENSORS_ACTUATORS_2.HOOK_P" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_2.CRANE_DIS_S" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.CRANE_DIS_S" Source="SENSORS_ACTUATORS_2.CRANE_DIS_S" dx1="440.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.CRANE_DIS_S" Source="SENSORS_ACTUATORS_2.CRANE_DIS_S" dx1="1390.0"/>
+          <Connection Comment="" Destination="PERMITTER_2.E_STOP" Source="SUBSCRIBE_10_2.RD_1"/>
+          <Connection Comment="" Destination="PERMITTER_2.N_STOP" Source="START_STOP_CONTROLLER_2.FMA_O"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.ACTIVATE_BRIDGE" Source="SUBSCRIBE_10_2.RD_7"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.ACTIVATE_BRIDGE" Source="SUBSCRIBE_10_2.RD_7"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.ACTIVATE_BRIDGE" Source="SUBSCRIBE_10_2.RD_7"/>
+        </DataConnections>
+        <EventConnections>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="755.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="-40.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_2.INIT" Source="SUBSCRIBE_10_2.INITO" dx1="60.0" dx2="60.0" dy="120.0"/>
+          <Connection Comment="" Destination="START_STOP_CONTROLLER_2.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="120.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.REQ" Source="START_STOP_CONTROLLER_2.CNF"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.REQ" Source="START_STOP_CONTROLLER_2.CNF" dx1="60.0" dx2="60.0" dy="800.0"/>
+          <Connection Comment="" Destination="SERVER2.RSP" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="120.0"/>
+          <Connection Comment="" Destination="SUBSCRIBE_10_2.INIT" Source="SERVER2.INITO" dx1="60.0" dx2="60.0" dy="-750.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.REQ" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="-790.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.REQ" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="5.0"/>
+          <Connection Comment="" Destination="SERVER2.RSP" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="120.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="START_STOP_CONTROLLER_2.CNF" dx1="370.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="SERVER2.IND" dx1="60.0" dx2="60.0" dy="455.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="1205.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="CRANE2_COME_TO_ME.CNF" dx1="60.0" dx2="60.0" dy="400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="CRANE2_FOLLOW_ME.CNF" dx1="60.0" dx2="60.0" dy="-400.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="CRANE2_FOLLOW_MACHINE.CNF" dx1="60.0" dx2="60.0" dy="-850.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.REQ" Source="SUBSCRIBE_10_2.IND" dx1="60.0" dx2="60.0" dy="355.0"/>
+          <Connection Comment="" Destination="SENSORS_ACTUATORS_2.INIT" Source="SUBSCRIBE_10_2.INITO" dx1="60.0" dx2="60.0" dy="440.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_ME.MPS_E" Source="SENSORS_ACTUATORS_2.S_A_E" dx1="440.0"/>
+          <Connection Comment="" Destination="CRANE2_COME_TO_ME.MPS_E" Source="SENSORS_ACTUATORS_2.S_A_E" dx1="1390.0"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.MPS_E" Source="SENSORS_ACTUATORS_2.S_A_E" dx1="1390.0"/>
+          <Connection Comment="" Destination="SERVER2.INIT" Source="START.COLD" dx1="3760.0"/>
+          <Connection Comment="" Destination="SERVER2.INIT" Source="START.WARM" dx1="3760.0"/>
+          <Connection Comment="" Destination="PERMITTER_2.TRIGGER_IN" Source="SENSORS_ACTUATORS_2.S_A_E"/>
+          <Connection Comment="" Destination="PERMITTER_2.REQ" Source="START_STOP_CONTROLLER_2.CNF"/>
+          <Connection Comment="" Destination="CRANE2_FOLLOW_MACHINE.REQ" Source="PERMITTER_2.TRIGGER_OUT"/>
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Device Comment="" Name="FBRT_WINDOW" Type="FBRT_WINDOW" x="900.0" y="3100.0">
+    <Parameter Name="BOUNDS" Value="[300,300,220,400]"/>
+    <Parameter Name="GRID" Value="[1,1]"/>
+    <Parameter Name="MGR_ID" Value="&quot;localhost:61505&quot;"/>
+    <Attribute Comment="device profile" Name="Profile" Type="STRING" Value="HOLOBLOC"/>
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="229,97,167"/>
+    <Resource Comment="" Name="PANEL_RESOURCE" Type="PANEL_RESOURCE" x="0.0" y="0.0">
+      <FBNetwork>
+        <FB Comment="" Name="HOOK_UP_DOWN" Type="RADIO_BOOL" x="7200.0" y="2100.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Hook Down"/>
+          <Parameter Name="LABEL0" Value="Stop"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="MASTER_SLAVE" Type="RADIO_BOOL" x="3600.0" y="2100.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Activate Bridge"/>
+          <Parameter Name="LABEL0" Value="Stop"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="CHOOSE_X" Type="RADIO_BOOL" x="2200.0" y="3000.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Choose X"/>
+          <Parameter Name="LABEL0" Value="No"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="INPUT_BOX" Type="IN_ANY" x="3300.0" y="900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="W" Value="20"/>
+          <Parameter Name="TYPE" Value="INT"/>
+        </FB>
+        <FB Comment="" Name="FOLLOW_MACHINE" Type="RADIO_BOOL" x="7600.0" y="900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Follow machine"/>
+          <Parameter Name="LABEL0" Value="STOP"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="BOOL2BOOL" Type="BOOL2BOOL" x="3600.0" y="3200.0"/>
+        <FB Comment="" Name="INT2INT" Type="INT2INT" x="4100.0" y="1100.0"/>
+        <FB Comment="" Name="FOLLOW_ME" Type="RADIO_BOOL" x="6300.0" y="900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Follow me"/>
+          <Parameter Name="LABEL0" Value="STOP"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="ACTIVATE_HOOK" Type="RADIO_BOOL" x="6300.0" y="2100.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Hook Up"/>
+          <Parameter Name="LABEL0" Value="Stop"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="EMERGENCY_STOP" Type="RADIO_BOOL" x="2200.0" y="900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Start"/>
+          <Parameter Name="LABEL0" Value="Emergency STOP"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="CRANE_NR" Type="RADIO_BOOL" x="2200.0" y="2100.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Select Crane Nr"/>
+          <Parameter Name="LABEL0" Value="No"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="BOOL2BOOL_1" Type="BOOL2BOOL" x="6100.0" y="3200.0"/>
+        <FB Comment="" Name="CHOOSE_Y" Type="RADIO_BOOL" x="4900.0" y="3000.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Choose Y"/>
+          <Parameter Name="LABEL0" Value="No"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="ACTIVATE_TROLLEY" Type="RADIO_BOOL" x="4900.0" y="2100.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Activate Trolley"/>
+          <Parameter Name="LABEL0" Value="Stop"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="COME_TO_ME" Type="RADIO_BOOL" x="5100.0" y="900.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="LABEL1" Value="Come to me"/>
+          <Parameter Name="LABEL0" Value="STOP"/>
+          <Parameter Name="IN" Value="0"/>
+        </FB>
+        <FB Comment="" Name="PUBLISH_12" Type="PUBLISH_12" x="730.0" y="1135.0">
+          <Parameter Name="QI" Value="1"/>
+          <Parameter Name="ID" Value="239.0.0.1:61496"/>
+        </FB>
+        <DataConnections>
+          <Connection Comment="" Destination="BOOL2BOOL.IN" Source="CHOOSE_X.OUT" dx1="425.0"/>
+          <Connection Comment="" Destination="INT2INT.IN" Source="INPUT_BOX.OUT" dx1="180.0"/>
+          <Connection Comment="" Destination="BOOL2BOOL_1.IN" Source="CHOOSE_Y.OUT" dx1="325.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_1" Source="EMERGENCY_STOP.OUT" dx1="60.0" dx2="60.0" dy="115.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_2" Source="INT2INT.OUT" dx1="60.0" dx2="60.0" dy="185.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_3" Source="COME_TO_ME.OUT" dx1="60.0" dx2="60.0" dy="200.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_4" Source="FOLLOW_ME.OUT" dx1="60.0" dx2="60.0" dy="245.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_5" Source="FOLLOW_MACHINE.OUT" dx1="60.0" dx2="60.0" dy="285.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_6" Source="CRANE_NR.OUT" dx1="60.0" dx2="60.0" dy="-270.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_7" Source="MASTER_SLAVE.OUT" dx1="60.0" dx2="60.0" dy="-225.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_8" Source="ACTIVATE_TROLLEY.OUT" dx1="60.0" dx2="60.0" dy="-185.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_9" Source="ACTIVATE_HOOK.OUT" dx1="60.0" dx2="60.0" dy="-140.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_10" Source="HOOK_UP_DOWN.OUT" dx1="60.0" dx2="60.0" dy="-100.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_11" Source="BOOL2BOOL.OUT" dx1="60.0" dx2="60.0" dy="-480.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.SD_12" Source="BOOL2BOOL_1.OUT" dx1="60.0" dx2="60.0" dy="-435.0"/>
+        </DataConnections>
+        <EventConnections>
+          <Connection Comment="" Destination="CHOOSE_X.INIT" Source="HOOK_UP_DOWN.INITO" dx1="60.0" dx2="60.0" dy="450.0"/>
+          <Connection Comment="" Destination="BOOL2BOOL.REQ" Source="CHOOSE_X.IND" dx1="425.0"/>
+          <Connection Comment="" Destination="INT2INT.REQ" Source="INPUT_BOX.IND" dx1="180.0"/>
+          <Connection Comment="" Destination="FOLLOW_MACHINE.INIT" Source="FOLLOW_ME.INITO"/>
+          <Connection Comment="" Destination="HOOK_UP_DOWN.INIT" Source="ACTIVATE_HOOK.INITO"/>
+          <Connection Comment="" Destination="INPUT_BOX.INIT" Source="EMERGENCY_STOP.INITO"/>
+          <Connection Comment="" Destination="CRANE_NR.INIT" Source="FOLLOW_MACHINE.INITO" dx1="60.0" dx2="60.0" dy="600.0"/>
+          <Connection Comment="" Destination="MASTER_SLAVE.INIT" Source="CRANE_NR.INITO"/>
+          <Connection Comment="" Destination="CHOOSE_Y.INIT" Source="CHOOSE_X.INITO"/>
+          <Connection Comment="" Destination="BOOL2BOOL_1.REQ" Source="CHOOSE_Y.IND" dx1="325.0"/>
+          <Connection Comment="" Destination="ACTIVATE_TROLLEY.INIT" Source="MASTER_SLAVE.INITO"/>
+          <Connection Comment="" Destination="ACTIVATE_HOOK.INIT" Source="ACTIVATE_TROLLEY.INITO"/>
+          <Connection Comment="" Destination="COME_TO_ME.INIT" Source="INPUT_BOX.INITO"/>
+          <Connection Comment="" Destination="FOLLOW_ME.INIT" Source="COME_TO_ME.INITO"/>
+          <Connection Comment="" Destination="EMERGENCY_STOP.INIT" Source="PUBLISH_12.INITO" dx1="455.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="EMERGENCY_STOP.IND" dx1="60.0" dx2="60.0" dy="75.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="INT2INT.CNF" dx1="60.0" dx2="60.0" dy="60.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="COME_TO_ME.IND" dx1="60.0" dx2="60.0" dy="75.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="FOLLOW_ME.IND" dx1="60.0" dx2="60.0" dy="75.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="FOLLOW_MACHINE.IND" dx1="60.0" dx2="60.0" dy="75.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="CRANE_NR.IND" dx1="60.0" dx2="60.0" dy="-525.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="MASTER_SLAVE.IND" dx1="60.0" dx2="60.0" dy="-525.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="ACTIVATE_TROLLEY.IND" dx1="60.0" dx2="60.0" dy="-525.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="ACTIVATE_HOOK.IND" dx1="60.0" dx2="60.0" dy="-525.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="HOOK_UP_DOWN.IND" dx1="60.0" dx2="60.0" dy="-525.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="BOOL2BOOL.CNF" dx1="60.0" dx2="60.0" dy="-990.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.REQ" Source="BOOL2BOOL_1.CNF" dx1="60.0" dx2="60.0" dy="-990.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.INIT" Source="START.COLD" dx1="120.0"/>
+          <Connection Comment="" Destination="PUBLISH_12.INIT" Source="START.WARM" dx1="120.0"/>
+        </EventConnections>
+      </FBNetwork>
+    </Resource>
+  </Device>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.HMI_FOLLOW_ME" To="HMI_DEVICE.EMB_RES.HMI_FOLLOW_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.HMI_COME_TO_ME" To="HMI_DEVICE.EMB_RES.HMI_COME_TO_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.TYPE_CONVERTER" To="HMI_DEVICE.EMB_RES.TYPE_CONVERTER"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.FUNCTIONALITY_CONTROLLER" To="HMI_DEVICE.EMB_RES.FUNCTIONALITY_CONTROLLER"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.HMI_FOLLOW_MACHINE" To="HMI_DEVICE.EMB_RES.HMI_FOLLOW_MACHINE"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.HOOK_UP_DOWN" To="FBRT_WINDOW.PANEL_RESOURCE.HOOK_UP_DOWN"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.MASTER_SLAVE" To="FBRT_WINDOW.PANEL_RESOURCE.MASTER_SLAVE"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CHOOSE_X" To="FBRT_WINDOW.PANEL_RESOURCE.CHOOSE_X"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.INPUT_BOX" To="FBRT_WINDOW.PANEL_RESOURCE.INPUT_BOX"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.FOLLOW_MACHINE" To="FBRT_WINDOW.PANEL_RESOURCE.FOLLOW_MACHINE"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.BOOL2BOOL" To="FBRT_WINDOW.PANEL_RESOURCE.BOOL2BOOL"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.INT2INT" To="FBRT_WINDOW.PANEL_RESOURCE.INT2INT"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.FOLLOW_ME" To="FBRT_WINDOW.PANEL_RESOURCE.FOLLOW_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.ACTIVATE_HOOK" To="FBRT_WINDOW.PANEL_RESOURCE.ACTIVATE_HOOK"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.EMERGENCY_STOP" To="FBRT_WINDOW.PANEL_RESOURCE.EMERGENCY_STOP"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE_NR" To="FBRT_WINDOW.PANEL_RESOURCE.CRANE_NR"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.BOOL2BOOL_1" To="FBRT_WINDOW.PANEL_RESOURCE.BOOL2BOOL_1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CHOOSE_Y" To="FBRT_WINDOW.PANEL_RESOURCE.CHOOSE_Y"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.ACTIVATE_TROLLEY" To="FBRT_WINDOW.PANEL_RESOURCE.ACTIVATE_TROLLEY"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.COME_TO_ME" To="FBRT_WINDOW.PANEL_RESOURCE.COME_TO_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE_1" To="HMI_DEVICE.EMB_RES.CRANE_1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CEANE_2" To="HMI_DEVICE.EMB_RES.CEANE_2"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE_SELECTOR" To="HMI_DEVICE.EMB_RES.CRANE_SELECTOR"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.FME_FMA_DECIDER" To="HMI_DEVICE.EMB_RES.FME_FMA_DECIDER"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.PUBLISH_10" To="HMI_DEVICE.EMB_RES.PUBLISH_10"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.PUBLISH_12" To="FBRT_WINDOW.PANEL_RESOURCE.PUBLISH_12"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SUBSCRIBE_12" To="HMI_DEVICE.EMB_RES.SUBSCRIBE_12"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE2_FOLLOW_ME" To="CRANE_2_DEVICCE.EMB_RES.CRANE2_FOLLOW_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SUBSCRIBE_10_2" To="CRANE_2_DEVICCE.EMB_RES.SUBSCRIBE_10_2"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE2_COME_TO_ME" To="CRANE_2_DEVICCE.EMB_RES.CRANE2_COME_TO_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.START_STOP_CONTROLLER_2" To="CRANE_2_DEVICCE.EMB_RES.START_STOP_CONTROLLER_2"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SERVER2" To="CRANE_2_DEVICCE.EMB_RES.SERVER2"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE2_FOLLOW_MACHINE" To="CRANE_2_DEVICCE.EMB_RES.CRANE2_FOLLOW_MACHINE"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SENSORS_ACTUATORS_2" To="CRANE_2_DEVICCE.EMB_RES.SENSORS_ACTUATORS_2"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE1_COME_TO_ME" To="CRANE_1_DEVICCE.EMB_RES.CRANE1_COME_TO_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE1_FOLLOW_MACHINE" To="CRANE_1_DEVICCE.EMB_RES.CRANE1_FOLLOW_MACHINE"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.CRANE1_FOLLOW_ME" To="CRANE_1_DEVICCE.EMB_RES.CRANE1_FOLLOW_ME"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SERVER1" To="CRANE_1_DEVICCE.EMB_RES.SERVER1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.START_STOP_CONTROLLER_1" To="CRANE_1_DEVICCE.EMB_RES.START_STOP_CONTROLLER_1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SENSORS_ACTUATORS_1" To="CRANE_1_DEVICCE.EMB_RES.SENSORS_ACTUATORS_1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.SUB1" To="CRANE_1_DEVICCE.EMB_RES.SUB1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.REQUEST" To="HMI_DEVICE.EMB_RES.REQUEST"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.RESPONSE" To="HMI_DEVICE.EMB_RES.RESPONSE"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.PERMITTER_1" To="CRANE_1_DEVICCE.EMB_RES.PERMITTER_1"/>
+  <Mapping From="Distributed_Control_System_OPCUA_4DiacApp.PERMITTER_2" To="CRANE_2_DEVICCE.EMB_RES.PERMITTER_2"/>
+  <Segment Comment="" Name="Ethernet" Type="Ethernet" dx1="4885.0" x="1400.0" y="800.0">
+    <Attribute Comment="color" Name="Color" Type="STRING" Value="85,204,48"/>
+  </Segment>
+  <Link CommResource="FBRT_WINDOW" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="HMI_DEVICE" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="CRANE_1_DEVICCE" Comment="" SegmentName="Ethernet"/>
+  <Link CommResource="CRANE_2_DEVICCE" Comment="" SegmentName="Ethernet"/>
+</System>

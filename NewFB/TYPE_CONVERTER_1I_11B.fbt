@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="TYPE_CONVERTER_1I_11B">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-02" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="BOOL1IN"/>
+        <With Var="INT2IN"/>
+        <With Var="BOOL3IN"/>
+        <With Var="BOOL4IN"/>
+        <With Var="BOOL5IN"/>
+        <With Var="BOOL6IN"/>
+        <With Var="BOOL7IN"/>
+        <With Var="BOOL8IN"/>
+        <With Var="BOOL9IN"/>
+        <With Var="BOOL10IN"/>
+        <With Var="BOOL11IN"/>
+        <With Var="BOOL12IN"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event">
+        <With Var="BOOL1OUT"/>
+        <With Var="INT2OUT"/>
+        <With Var="BOOL3OUT"/>
+        <With Var="BOOL4OUT"/>
+        <With Var="BOOL5OUT"/>
+        <With Var="BOOL6OUT"/>
+        <With Var="BOOL7OUT"/>
+        <With Var="BOOL8OUT"/>
+        <With Var="BOOL9OUT"/>
+        <With Var="BOOL10OUT"/>
+        <With Var="BOOL11OUT"/>
+        <With Var="BOOL12OUT"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="BOOL1IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="INT2IN" Type="INT"/>
+      <VarDeclaration Comment="" Name="BOOL3IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL4IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL5IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL6IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL7IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL8IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL9IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL10IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL11IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL12IN" Type="BOOL"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="" Name="BOOL1OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="INT2OUT" Type="INT"/>
+      <VarDeclaration Comment="" Name="BOOL3OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL4OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL5OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL6OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL7OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL8OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL9OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL10OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL11OUT" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="BOOL12OUT" Type="BOOL"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="B" Type="INT2INT" x="2400.0" y="2300.0"/>
+    <FB Comment="" Name="G" Type="BOOL2BOOL" x="1700.0" y="2800.0"/>
+    <FB Comment="" Name="H" Type="BOOL2BOOL" x="2300.0" y="2800.0"/>
+    <FB Comment="" Name="I" Type="BOOL2BOOL" x="2900.0" y="2800.0"/>
+    <FB Comment="" Name="J" Type="BOOL2BOOL" x="3500.0" y="2800.0"/>
+    <FB Comment="" Name="K" Type="BOOL2BOOL" x="4100.0" y="2800.0"/>
+    <FB Comment="" Name="L" Type="BOOL2BOOL" x="4700.0" y="2800.0"/>
+    <FB Comment="" Name="E" Type="BOOL2BOOL" x="4100.0" y="2300.0"/>
+    <FB Comment="" Name="F" Type="BOOL2BOOL" x="4700.0" y="2300.0"/>
+    <FB Comment="" Name="A" Type="BOOL2BOOL" x="1700.0" y="2300.0"/>
+    <FB Comment="" Name="C" Type="BOOL2BOOL" x="2900.0" y="2300.0"/>
+    <FB Comment="" Name="D" Type="BOOL2BOOL" x="3500.0" y="2300.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="B.IN" Source="INT2IN" dx1="1945.0"/>
+      <Connection Comment="" Destination="INT2OUT" Source="B.OUT" dx1="1595.0"/>
+      <Connection Comment="" Destination="A.IN" Source="BOOL1IN" dx1="1245.0"/>
+      <Connection Comment="" Destination="C.IN" Source="BOOL3IN" dx1="2445.0"/>
+      <Connection Comment="" Destination="D.IN" Source="BOOL4IN" dx1="3045.0"/>
+      <Connection Comment="" Destination="E.IN" Source="BOOL5IN" dx1="3645.0"/>
+      <Connection Comment="" Destination="F.IN" Source="BOOL6IN" dx1="4245.0"/>
+      <Connection Comment="" Destination="G.IN" Source="BOOL7IN" dx1="1245.0"/>
+      <Connection Comment="" Destination="H.IN" Source="BOOL8IN" dx1="1845.0"/>
+      <Connection Comment="" Destination="I.IN" Source="BOOL9IN" dx1="2445.0"/>
+      <Connection Comment="" Destination="J.IN" Source="BOOL10IN" dx1="3045.0"/>
+      <Connection Comment="" Destination="K.IN" Source="BOOL11IN" dx1="3645.0"/>
+      <Connection Comment="" Destination="L.IN" Source="BOOL12IN" dx1="4245.0"/>
+      <Connection Comment="" Destination="BOOL1OUT" Source="A.OUT" dx1="1875.0"/>
+      <Connection Comment="" Destination="BOOL3OUT" Source="C.OUT" dx1="1275.0"/>
+      <Connection Comment="" Destination="BOOL4OUT" Source="D.OUT" dx1="975.0"/>
+      <Connection Comment="" Destination="BOOL5OUT" Source="E.OUT" dx1="675.0"/>
+      <Connection Comment="" Destination="BOOL6OUT" Source="F.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="BOOL7OUT" Source="G.OUT" dx1="1875.0"/>
+      <Connection Comment="" Destination="BOOL8OUT" Source="H.OUT" dx1="1575.0"/>
+      <Connection Comment="" Destination="BOOL9OUT" Source="I.OUT" dx1="1275.0"/>
+      <Connection Comment="" Destination="BOOL10OUT" Source="J.OUT" dx1="975.0"/>
+      <Connection Comment="" Destination="BOOL11OUT" Source="K.OUT" dx1="675.0"/>
+      <Connection Comment="" Destination="BOOL12OUT" Source="L.OUT" dx1="375.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="A.REQ" Source="REQ" dx1="650.0"/>
+      <Connection Comment="" Destination="B.REQ" Source="A.CNF"/>
+      <Connection Comment="" Destination="C.REQ" Source="B.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="D.REQ" Source="C.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="E.REQ" Source="D.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="F.REQ" Source="E.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="G.REQ" Source="F.CNF" dx1="60.0" dx2="60.0" dy="-270.0"/>
+      <Connection Comment="" Destination="H.REQ" Source="G.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="I.REQ" Source="H.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="J.REQ" Source="I.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="K.REQ" Source="J.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="L.REQ" Source="K.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="CNF" Source="L.CNF" dx1="1535.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

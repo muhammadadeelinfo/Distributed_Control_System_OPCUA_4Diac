@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="SINGLE_EVENT_CONTROLLER">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-03-16" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="TE" Type="Event">
+        <With Var="TD"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="FE" Type="Event">
+        <With Var="FD"/>
+      </Event>
+      <Event Comment="" Name="EE" Type="Event">
+        <With Var="ED"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="OE" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="TD" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FD" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="ED" Type="BOOL"/>
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="5225.0" y="1335.0">
+      <Parameter Name="DT" Value="T#1s"/>
+    </FB>
+    <FB Comment="" Name="E_R_TRIG" Type="E_R_TRIG" x="3500.0" y="1100.0"/>
+    <FB Comment="" Name="E_F_TRIG" Type="E_F_TRIG" x="3500.0" y="1900.0"/>
+    <FB Comment="" Name="E_F_TRIG_1" Type="E_F_TRIG" x="3500.0" y="2600.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="E_R_TRIG.QI" Source="TD" dx1="1870.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.QI" Source="FD" dx1="1755.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.QI" Source="ED" dx1="1515.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="E_R_TRIG.EO" dx1="650.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="E_F_TRIG.EO" dx1="655.0"/>
+      <Connection Comment="" Destination="E_R_TRIG.EI" Source="TE" dx1="2120.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.EI" Source="FE" dx1="2000.0"/>
+      <Connection Comment="" Destination="OE" Source="E_CYCLE.EO" dx1="375.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.EI" Source="EE" dx1="1630.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="E_F_TRIG_1.EO" dx1="655.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

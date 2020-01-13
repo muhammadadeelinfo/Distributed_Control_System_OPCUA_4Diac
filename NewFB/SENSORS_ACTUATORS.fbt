@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="SENSORS_ACTUATORS">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-03-29" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="CTM_TROLLEY_F_I"/>
+        <With Var="FMA_BRIGDE_B_I"/>
+        <With Var="FMA_HOOK_D_I"/>
+        <With Var="FMA_TROLLEY_F_I"/>
+        <With Var="FMA_HOOK_U_I"/>
+        <With Var="FMA_TROLLEY_B_I"/>
+        <With Var="FMA_BRIDGE_F_I"/>
+        <With Var="CTM_TROLLEY_B_I"/>
+        <With Var="FMA_ACTIVATE_MP"/>
+        <With Var="CTM_HOOK_U_I"/>
+        <With Var="FME_HOOK_D_I"/>
+        <With Var="CTM_HOOK_D_I"/>
+        <With Var="FME_HOOK_U_I"/>
+        <With Var="FME_ACTIVATE_MP"/>
+        <With Var="FME_TROLLEY_B_I"/>
+        <With Var="FME_BRIDGE_F_I"/>
+        <With Var="FME_TROLLEY_F_I"/>
+        <With Var="FME_BRIGDE_B_I"/>
+        <With Var="CTM_BRIGDE_B_I"/>
+        <With Var="CTM_BRIDGE_F_I"/>
+        <With Var="CTM_ACTIVATE_MP"/>
+        <With Var="E_STOP"/>
+      </Event>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+      <Event Comment="sensors and actuators event" Name="S_A_E" Type="Event">
+        <With Var="BRIDGE_P"/>
+        <With Var="TROLLEY_P"/>
+        <With Var="CRANE_DIS_S"/>
+        <With Var="HOOK_P"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="CTM_ACTIVATE_MP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_BRIDGE_F_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_BRIGDE_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_TROLLEY_F_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_TROLLEY_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_HOOK_U_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_HOOK_D_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_ACTIVATE_MP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_BRIDGE_F_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_BRIGDE_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_TROLLEY_F_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_TROLLEY_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_HOOK_U_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_HOOK_D_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_ACTIVATE_MP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="E_STOP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_BRIDGE_F_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_BRIGDE_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_TROLLEY_F_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_TROLLEY_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_HOOK_U_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_HOOK_D_I" Type="BOOL"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="bridge position" Name="BRIDGE_P" Type="INT"/>
+      <VarDeclaration Comment="" Name="TROLLEY_P" Type="INT"/>
+      <VarDeclaration Comment="" Name="HOOK_P" Type="INT"/>
+      <VarDeclaration Comment="crane distance sensor" Name="CRANE_DIS_S" Type="INT"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="HOOK_U" Type="QW" x="6200.0" y="3300.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outD.motor.pwm"/>
+      <Parameter Name="OUT" Value="40"/>
+    </FB>
+    <FB Comment="" Name="TROLLEY_F" Type="QW" x="6200.0" y="2600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outC.motor.pwm"/>
+      <Parameter Name="OUT" Value="50"/>
+    </FB>
+    <FB Comment="" Name="BRIDGE_2_R" Type="QW" x="6200.0" y="1900.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outB.motor.pwm"/>
+      <Parameter Name="OUT" Value="50"/>
+    </FB>
+    <FB Comment="" Name="BRIDGE_1_R" Type="QW" x="6200.0" y="1200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outA.motor.pwm"/>
+      <Parameter Name="OUT" Value="50"/>
+    </FB>
+    <FB Comment="" Name="BRIDGE_2_E" Type="QX" x="4900.0" y="1900.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outB.motor.enable"/>
+    </FB>
+    <FB Comment="" Name="HOOK_E" Type="QX" x="4900.0" y="3300.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outD.motor.enable"/>
+    </FB>
+    <FB Comment="" Name="TROLLEY_E" Type="QX" x="4900.0" y="2600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outC.motor.enable"/>
+    </FB>
+    <FB Comment="" Name="BRIDGE_1_E" Type="QX" x="4900.0" y="1200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outA.motor.enable"/>
+    </FB>
+    <FB Comment="" Name="IX" Type="IX" x="1100.0" y="2500.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="in1.sensor.0"/>
+    </FB>
+    <FB Comment="" Name="E_R_TRIG" Type="E_R_TRIG" x="2100.0" y="2900.0"/>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="1100.0" y="3300.0">
+      <Parameter Name="DT" Value="T#1s"/>
+    </FB>
+    <FB Comment="" Name="CRANES_DIS" Type="ID" x="5900.0" y="200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outD.motor.position"/>
+    </FB>
+    <FB Comment="" Name="BRIDGE" Type="ID" x="4600.0" y="400.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outC.motor.position"/>
+    </FB>
+    <FB Comment="" Name="TROLLEY" Type="ID" x="3300.0" y="400.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outA.motor.position"/>
+    </FB>
+    <FB Comment="" Name="F_WORD_TO_INT" Type="F_DWORD_TO_INT" x="4000.0" y="-500.0"/>
+    <FB Comment="" Name="F_WORD_TO_INT_1" Type="F_DWORD_TO_INT" x="4900.0" y="-500.0"/>
+    <FB Comment="" Name="F_WORD_TO_INT_2" Type="F_DWORD_TO_INT" x="5700.0" y="-500.0"/>
+    <FB Comment="" Name="QX" Type="QW" x="7500.0" y="1200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outA.motor.pwm"/>
+      <Parameter Name="OUT" Value="-50"/>
+    </FB>
+    <FB Comment="" Name="QX_1" Type="QW" x="7500.0" y="1900.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outB.motor.pwm"/>
+      <Parameter Name="OUT" Value="-50"/>
+    </FB>
+    <FB Comment="" Name="QX_2" Type="QW" x="7500.0" y="2600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outC.motor.pwm"/>
+      <Parameter Name="OUT" Value="-50"/>
+    </FB>
+    <FB Comment="" Name="QX_3" Type="QW" x="7500.0" y="3300.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="outD.motor.pwm"/>
+      <Parameter Name="OUT" Value="-40"/>
+    </FB>
+    <FB Comment="" Name="E_F_TRIG_1" Type="E_F_TRIG" x="2700.0" y="100.0"/>
+    <FB Comment="" Name="E_R_TRIG_2" Type="E_R_TRIG" x="2700.0" y="-500.0"/>
+    <FB Comment="" Name="E_CYCLE_1" Type="E_CYCLE" x="3400.0" y="-400.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="EV3_CONTROLLER" Type="EV3_CONTROLLER" x="1100.0" y="-300.0"/>
+    <FB Comment="" Name="IW" Type="IW" x="7200.0" y="200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="in4.sensorw.0"/>
+    </FB>
+    <FB Comment="" Name="F_DWORD_TO_INT" Type="F_WORD_TO_INT" x="6600.0" y="-500.0"/>
+    <FB Comment="" Name="MOTOR_F_B" Type="MOTOR_F_B" x="3600.0" y="1265.0"/>
+    <FB Comment="" Name="MOTOR_F_B_2" Type="MOTOR_F_B" x="3600.0" y="2700.0"/>
+    <FB Comment="" Name="MOTOR_F_B_3" Type="MOTOR_F_B" x="3600.0" y="3400.0"/>
+    <FB Comment="" Name="RESET_M" Type="RESET_M" x="2100.0" y="2300.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="E_R_TRIG.QI" Source="IX.IN" dx1="300.0"/>
+      <Connection Comment="" Destination="BRIDGE_P" Source="F_WORD_TO_INT.OUT" dx1="2085.0"/>
+      <Connection Comment="" Destination="TROLLEY_P" Source="F_WORD_TO_INT_1.OUT" dx1="1635.0"/>
+      <Connection Comment="" Destination="F_WORD_TO_INT.IN" Source="TROLLEY.IN" dx1="60.0" dx2="60.0" dy="-575.0"/>
+      <Connection Comment="" Destination="F_WORD_TO_INT_1.IN" Source="BRIDGE.IN" dx1="60.0" dx2="60.0" dy="-575.0"/>
+      <Connection Comment="" Destination="F_WORD_TO_INT_2.IN" Source="CRANES_DIS.IN" dx1="60.0" dx2="60.0" dy="-575.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_ACTIVATE_MP" Source="CTM_ACTIVATE_MP"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.E_STOP" Source="E_STOP" dx1="70.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_BRIDGE_F_I" Source="CTM_BRIDGE_F_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_TROLLEY_F_I" Source="CTM_TROLLEY_F_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_TROLLEY_B_I" Source="CTM_TROLLEY_B_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_HOOK_U_I" Source="CTM_HOOK_U_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_HOOK_D_I" Source="CTM_HOOK_D_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_ACTIVATE_MP" Source="FME_ACTIVATE_MP"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_BRIDGE_F_I" Source="FME_BRIDGE_F_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_TROLLEY_F_I" Source="FME_TROLLEY_F_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_TROLLEY_B_I" Source="FME_TROLLEY_B_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_HOOK_U_I" Source="FME_HOOK_U_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_HOOK_D_I" Source="FME_HOOK_D_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_ACTIVATE_MP" Source="FMA_ACTIVATE_MP"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_BRIDGE_F_I" Source="FMA_BRIDGE_F_I" dx1="195.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_TROLLEY_F_I" Source="FMA_TROLLEY_F_I" dx1="195.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_TROLLEY_B_I" Source="FMA_TROLLEY_B_I" dx1="195.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_HOOK_U_I" Source="FMA_HOOK_U_I" dx1="195.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_HOOK_D_I" Source="FMA_HOOK_D_I" dx1="195.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.QI" Source="EV3_CONTROLLER.M_P" dx1="265.0"/>
+      <Connection Comment="" Destination="E_R_TRIG_2.QI" Source="EV3_CONTROLLER.M_P" dx1="265.0"/>
+      <Connection Comment="" Destination="F_DWORD_TO_INT.IN" Source="IW.IN" dx1="60.0" dx2="60.0" dy="-475.0"/>
+      <Connection Comment="" Destination="CRANE_DIS_S" Source="F_DWORD_TO_INT.OUT" dx1="810.0"/>
+      <Connection Comment="" Destination="HOOK_P" Source="F_WORD_TO_INT_2.OUT" dx1="1235.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.CTM_BRIDGE_B_I" Source="CTM_BRIGDE_B_I"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FMA_BRIDGE_B_I" Source="FMA_BRIGDE_B_I" dx1="195.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.FME_BRIDGE_B_I" Source="FME_BRIGDE_B_I"/>
+      <Connection Comment="" Destination="BRIDGE_1_E.OUT" Source="MOTOR_F_B.F_B" dx1="390.0"/>
+      <Connection Comment="" Destination="TROLLEY_E.OUT" Source="MOTOR_F_B_2.F_B" dx1="390.0"/>
+      <Connection Comment="" Destination="HOOK_E.OUT" Source="MOTOR_F_B_3.F_B" dx1="390.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B.M_F" Source="EV3_CONTROLLER.BRIDGE_F" dx1="675.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B.M_B" Source="EV3_CONTROLLER.BRIDGE_B" dx1="675.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B_2.M_F" Source="EV3_CONTROLLER.TROLLEY_F" dx1="675.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B_2.M_B" Source="EV3_CONTROLLER.TROLLEY_B" dx1="675.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B_3.M_F" Source="EV3_CONTROLLER.HOOK_U" dx1="675.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B_3.M_B" Source="EV3_CONTROLLER.HOOK_D" dx1="675.0"/>
+      <Connection Comment="" Destination="BRIDGE_2_E.OUT" Source="MOTOR_F_B.F_B" dx1="390.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="BRIDGE_1_R.INIT" Source="BRIDGE_1_E.INITO"/>
+      <Connection Comment="" Destination="BRIDGE_2_E.INIT" Source="BRIDGE_1_E.INITO" dx1="60.0" dx2="60.0" dy="550.0"/>
+      <Connection Comment="" Destination="BRIDGE_2_R.INIT" Source="BRIDGE_2_E.INITO"/>
+      <Connection Comment="" Destination="TROLLEY_E.INIT" Source="BRIDGE_2_E.INITO" dx1="60.0" dx2="60.0" dy="550.0"/>
+      <Connection Comment="" Destination="TROLLEY_F.INIT" Source="TROLLEY_E.INITO"/>
+      <Connection Comment="" Destination="HOOK_U.INIT" Source="HOOK_E.INITO"/>
+      <Connection Comment="" Destination="E_R_TRIG.EI" Source="IX.CNF" dx1="300.0"/>
+      <Connection Comment="" Destination="IX.REQ" Source="E_CYCLE.EO" dx1="60.0" dx2="60.0" dy="-160.0"/>
+      <Connection Comment="" Destination="IX.INIT" Source="INIT" dx1="195.0"/>
+      <Connection Comment="" Destination="CRANES_DIS.INIT" Source="BRIDGE.INITO" dx1="330.0"/>
+      <Connection Comment="" Destination="CRANES_DIS.REQ" Source="BRIDGE.CNF" dx1="330.0"/>
+      <Connection Comment="" Destination="BRIDGE.INIT" Source="TROLLEY.INITO"/>
+      <Connection Comment="" Destination="BRIDGE.REQ" Source="TROLLEY.CNF"/>
+      <Connection Comment="" Destination="F_WORD_TO_INT_1.REQ" Source="F_WORD_TO_INT.CNF"/>
+      <Connection Comment="" Destination="F_WORD_TO_INT_2.REQ" Source="F_WORD_TO_INT_1.CNF" dx1="60.0" dx2="60.0" dy="120.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.START" Source="E_R_TRIG_2.EO" dx1="140.0"/>
+      <Connection Comment="" Destination="TROLLEY.REQ" Source="E_CYCLE_1.EO" dx1="60.0" dx2="60.0" dy="595.0"/>
+      <Connection Comment="" Destination="E_R_TRIG_2.EI" Source="EV3_CONTROLLER.CNF" dx1="265.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.EI" Source="EV3_CONTROLLER.CNF" dx1="265.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.REQ" Source="REQ" dx1="195.0"/>
+      <Connection Comment="" Destination="EV3_CONTROLLER.INIT" Source="INIT" dx1="195.0"/>
+      <Connection Comment="" Destination="BRIDGE_1_E.INIT" Source="EV3_CONTROLLER.INITO" dx1="525.0"/>
+      <Connection Comment="" Destination="TROLLEY.INIT" Source="EV3_CONTROLLER.INITO" dx1="525.0"/>
+      <Connection Comment="" Destination="IW.INIT" Source="CRANES_DIS.INITO"/>
+      <Connection Comment="" Destination="IW.REQ" Source="CRANES_DIS.CNF"/>
+      <Connection Comment="" Destination="F_WORD_TO_INT.REQ" Source="IW.CNF" dx1="60.0" dx2="60.0" dy="-390.0"/>
+      <Connection Comment="" Destination="INITO" Source="IW.INITO" dx1="525.0"/>
+      <Connection Comment="" Destination="F_DWORD_TO_INT.REQ" Source="F_WORD_TO_INT_2.CNF"/>
+      <Connection Comment="" Destination="S_A_E" Source="F_DWORD_TO_INT.CNF" dx1="810.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B.REQ" Source="EV3_CONTROLLER.CNF" dx1="675.0"/>
+      <Connection Comment="" Destination="BRIDGE_1_E.REQ" Source="MOTOR_F_B.CNF" dx1="390.0"/>
+      <Connection Comment="" Destination="HOOK_E.INIT" Source="TROLLEY_E.INITO" dx1="60.0" dx2="60.0" dy="350.0"/>
+      <Connection Comment="" Destination="QX_3.INIT" Source="HOOK_U.INITO"/>
+      <Connection Comment="" Destination="QX_2.INIT" Source="TROLLEY_F.INITO"/>
+      <Connection Comment="" Destination="QX_1.INIT" Source="BRIDGE_2_R.INITO"/>
+      <Connection Comment="" Destination="QX.INIT" Source="BRIDGE_1_R.INITO"/>
+      <Connection Comment="" Destination="BRIDGE_1_R.REQ" Source="MOTOR_F_B.F" dx1="1040.0"/>
+      <Connection Comment="" Destination="QX.REQ" Source="MOTOR_F_B.B" dx1="1690.0"/>
+      <Connection Comment="" Destination="TROLLEY_F.REQ" Source="MOTOR_F_B_2.F" dx1="1040.0"/>
+      <Connection Comment="" Destination="QX_2.REQ" Source="MOTOR_F_B_2.B" dx1="1690.0"/>
+      <Connection Comment="" Destination="HOOK_U.REQ" Source="MOTOR_F_B_3.F" dx1="1040.0"/>
+      <Connection Comment="" Destination="QX_3.REQ" Source="MOTOR_F_B_3.B" dx1="1690.0"/>
+      <Connection Comment="" Destination="HOOK_E.REQ" Source="MOTOR_F_B_3.CNF" dx1="390.0"/>
+      <Connection Comment="" Destination="BRIDGE_2_R.REQ" Source="MOTOR_F_B.F" dx1="1040.0"/>
+      <Connection Comment="" Destination="QX_1.REQ" Source="MOTOR_F_B.B" dx1="1690.0"/>
+      <Connection Comment="" Destination="TROLLEY_E.REQ" Source="MOTOR_F_B_2.CNF" dx1="390.0"/>
+      <Connection Comment="" Destination="BRIDGE_2_E.REQ" Source="MOTOR_F_B.CNF" dx1="390.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B_2.REQ" Source="EV3_CONTROLLER.CNF" dx1="675.0"/>
+      <Connection Comment="" Destination="MOTOR_F_B_3.REQ" Source="EV3_CONTROLLER.CNF" dx1="675.0"/>
+      <Connection Comment="" Destination="RESET_M.INIT" Source="IX.INITO" dx1="300.0"/>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="INIT" dx1="195.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.STOP" Source="E_F_TRIG_1.EO" dx1="140.0"/>
+      <Connection Comment="" Destination="RESET_M.REQ" Source="E_R_TRIG.EO" dx1="60.0" dx2="60.0" dy="-255.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>
