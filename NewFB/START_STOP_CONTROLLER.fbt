@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="START_STOP_CONTROLLER">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-12" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="CTM"/>
+        <With Var="FME"/>
+        <With Var="FMA"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event">
+        <With Var="CTM_O"/>
+        <With Var="FME_O"/>
+        <With Var="FMA_O"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="CTM" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA" Type="BOOL"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="" Name="CTM_O" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_O" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_O" Type="BOOL"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="START_STOP" Type="START_STOP" x="3200.0" y="700.0"/>
+    <FB Comment="" Name="IX" Type="IX" x="2300.0" y="1800.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="PARAMS" Value="in2.sensor.0"/>
+    </FB>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="1355.0" y="1770.0">
+      <Parameter Name="DT" Value="T#1s"/>
+    </FB>
+    <FB Comment="" Name="E_R_TRIG" Type="E_R_TRIG" x="3335.0" y="1910.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="START_STOP.BUTTON_STOP" Source="IX.IN" dx1="130.0"/>
+      <Connection Comment="" Destination="START_STOP.CTM" Source="CTM" dx1="1500.0"/>
+      <Connection Comment="" Destination="START_STOP.FME" Source="FME" dx1="1500.0"/>
+      <Connection Comment="" Destination="START_STOP.FMA" Source="FMA" dx1="1500.0"/>
+      <Connection Comment="" Destination="CTM_O" Source="START_STOP.CTM_O" dx1="375.0"/>
+      <Connection Comment="" Destination="FME_O" Source="START_STOP.FME_O" dx1="375.0"/>
+      <Connection Comment="" Destination="FMA_O" Source="START_STOP.FMA_O" dx1="375.0"/>
+      <Connection Comment="" Destination="E_R_TRIG.QI" Source="IX.IN" dx1="195.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="IX.REQ" Source="E_CYCLE.EO" dx1="265.0"/>
+      <Connection Comment="" Destination="IX.INIT" Source="INIT" dx1="2040.0"/>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="INIT" dx1="575.0"/>
+      <Connection Comment="" Destination="START_STOP.N_STOP_E" Source="REQ" dx1="1500.0"/>
+      <Connection Comment="" Destination="CNF" Source="START_STOP.OUT_E" dx1="375.0"/>
+      <Connection Comment="" Destination="E_R_TRIG.EI" Source="IX.CNF" dx1="195.0"/>
+      <Connection Comment="" Destination="START_STOP.N_STOP_E" Source="E_R_TRIG.EO" dx1="60.0" dx2="60.0" dy="-605.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

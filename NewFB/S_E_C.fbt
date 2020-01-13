@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="S_E_C">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-03" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="" Name="S_E" Type="Event">
+        <With Var="CTM_N"/>
+        <With Var="FME_N"/>
+        <With Var="FMA_N"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="" Name="CTM_E" Type="Event"/>
+      <Event Comment="" Name="FME_E" Type="Event"/>
+      <Event Comment="" Name="FMA_E" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="CTM_N" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_N" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_N" Type="BOOL"/>
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="CTM" Type="E_R_TRIG" x="3900.0" y="400.0"/>
+    <FB Comment="" Name="FME" Type="E_R_TRIG" x="3900.0" y="1300.0"/>
+    <FB Comment="" Name="FMA" Type="E_R_TRIG" x="3900.0" y="2300.0"/>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="4800.0" y="600.0">
+      <Parameter Name="DT" Value="T#500ms"/>
+    </FB>
+    <FB Comment="" Name="E_F_TRIG" Type="E_F_TRIG" x="3900.0" y="800.0"/>
+    <FB Comment="" Name="E_F_TRIG_1" Type="E_F_TRIG" x="3900.0" y="1700.0"/>
+    <FB Comment="" Name="E_F_TRIG_2" Type="E_F_TRIG" x="3900.0" y="2700.0"/>
+    <FB Comment="" Name="E_CYCLE_1" Type="E_CYCLE" x="4800.0" y="1500.0">
+      <Parameter Name="DT" Value="T#500ms"/>
+    </FB>
+    <FB Comment="" Name="E_CYCLE_2" Type="E_CYCLE" x="4800.0" y="2500.0">
+      <Parameter Name="DT" Value="T#500ms"/>
+    </FB>
+    <DataConnections>
+      <Connection Comment="" Destination="CTM.QI" Source="CTM_N" dx1="1805.0"/>
+      <Connection Comment="" Destination="FME.QI" Source="FME_N" dx1="1805.0"/>
+      <Connection Comment="" Destination="FMA.QI" Source="FMA_N" dx1="1805.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.QI" Source="CTM_N" dx1="1805.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="CTM.EO" dx1="240.0"/>
+      <Connection Comment="" Destination="CTM_E" Source="E_CYCLE.EO" dx1="1075.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="E_F_TRIG.EO" dx1="240.0"/>
+      <Connection Comment="" Destination="CTM.EI" Source="S_E" dx1="1805.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.EI" Source="S_E" dx1="1805.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.START" Source="FME.EO" dx1="240.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.STOP" Source="E_F_TRIG_1.EO" dx1="240.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.START" Source="FMA.EO" dx1="240.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.STOP" Source="E_F_TRIG_2.EO" dx1="240.0"/>
+      <Connection Comment="" Destination="FME_E" Source="E_CYCLE_1.EO" dx1="1075.0"/>
+      <Connection Comment="" Destination="FMA_E" Source="E_CYCLE_2.EO" dx1="1075.0"/>
+      <Connection Comment="" Destination="FME.EI" Source="S_E" dx1="1805.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.EI" Source="S_E" dx1="1805.0"/>
+      <Connection Comment="" Destination="FMA.EI" Source="S_E" dx1="1805.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_2.EI" Source="S_E" dx1="1805.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

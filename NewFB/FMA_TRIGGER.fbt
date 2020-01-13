@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="FMA_TRIGGER">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-11" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="" Name="E_IN" Type="Event"/>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="E_STOP"/>
+        <With Var="N_STOP"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="" Name="E_OUT" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="E_STOP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="N_STOP" Type="BOOL"/>
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="PERMITTER" Type="PERMITTER" x="3200.0" y="900.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="PERMITTER.E_STOP" Source="E_STOP" dx1="620.0"/>
+      <Connection Comment="" Destination="PERMITTER.N_STOP" Source="N_STOP" dx1="620.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="PERMITTER.REQ" Source="REQ" dx1="620.0"/>
+      <Connection Comment="" Destination="PERMITTER.TRIGGER_IN" Source="E_IN" dx1="620.0"/>
+      <Connection Comment="" Destination="E_OUT" Source="PERMITTER.TRIGGER_OUT" dx1="2335.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

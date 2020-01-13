@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="SUBSCRIBE_OPCUA_4">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="iotdeveloperpk" Date="2019-02-09" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event">
+        <With Var="QI"/>
+      </Event>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="QI"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event">
+        <With Var="QO"/>
+        <With Var="STATUS"/>
+        <With Var="RD_1"/>
+        <With Var="RD_2"/>
+        <With Var="RD_3"/>
+        <With Var="RD_4"/>
+      </Event>
+      <Event Comment="Execution Confirmation" Name="CNF" Type="Event">
+        <With Var="QO"/>
+        <With Var="STATUS"/>
+        <With Var="RD_1"/>
+        <With Var="RD_2"/>
+        <With Var="RD_3"/>
+        <With Var="RD_4"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="QI" Type="BOOL"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="Output event qualifier" Name="QO" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="STATUS" Type="WSTRING"/>
+      <VarDeclaration Comment="" Name="RD_1" Type="INT"/>
+      <VarDeclaration Comment="" Name="RD_2" Type="INT"/>
+      <VarDeclaration Comment="" Name="RD_3" Type="INT"/>
+      <VarDeclaration Comment="" Name="RD_4" Type="INT"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="INT2INT" Type="INT2INT" x="5800.0" y="600.0"/>
+    <FB Comment="" Name="INT2INT_1" Type="INT2INT" x="5800.0" y="1100.0"/>
+    <FB Comment="" Name="INT2INT_2" Type="INT2INT" x="5800.0" y="1600.0"/>
+    <FB Comment="" Name="INT2INT_3" Type="INT2INT" x="5800.0" y="2100.0"/>
+    <FB Comment="" Name="SUBSCRIBE_1" Type="SUBSCRIBE_1" x="3000.0" y="400.0">
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://localhost:4840#/Objects/1:variables/variable1/OUT]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_1" Type="SUBSCRIBE_1" x="3900.0" y="1100.0">
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://localhost:4840#/Objects/2:variables/variable2/OUT]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_2" Type="SUBSCRIBE_1" x="3000.0" y="1800.0">
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://localhost:4840#/Objects/3:variables/variable3/OUT]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_3" Type="SUBSCRIBE_1" x="3900.0" y="2500.0">
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://localhost:4840#/Objects/4:variables/variable4/OUT]"/>
+    </FB>
+    <DataConnections>
+      <Connection Comment="" Destination="INT2INT.IN" Source="SUBSCRIBE_1.RD_1" dx1="1970.0"/>
+      <Connection Comment="" Destination="INT2INT_1.IN" Source="SUBSCRIBE_1_1.RD_1" dx1="1285.0"/>
+      <Connection Comment="" Destination="INT2INT_2.IN" Source="SUBSCRIBE_1_2.RD_1" dx1="1970.0"/>
+      <Connection Comment="" Destination="INT2INT_3.IN" Source="SUBSCRIBE_1_3.RD_1" dx1="1285.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1.QI" Source="QI" dx1="555.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_1.QI" Source="QI" dx1="1005.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_2.QI" Source="QI" dx1="555.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_3.QI" Source="QI" dx1="1005.0"/>
+      <Connection Comment="" Destination="QO" Source="SUBSCRIBE_1.QO" dx1="1695.0"/>
+      <Connection Comment="" Destination="STATUS" Source="SUBSCRIBE_1.STATUS" dx1="1695.0"/>
+      <Connection Comment="" Destination="RD_1" Source="INT2INT.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="RD_2" Source="INT2INT_1.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="RD_3" Source="INT2INT_2.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="RD_4" Source="INT2INT_3.OUT" dx1="375.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="SUBSCRIBE_1.INIT" Source="INIT" dx1="555.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_1.INIT" Source="INIT" dx1="1005.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_2.INIT" Source="INIT" dx1="555.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_3.INIT" Source="INIT" dx1="1005.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1.RSP" Source="REQ" dx1="555.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_1.RSP" Source="REQ" dx1="1005.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_2.RSP" Source="REQ" dx1="555.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_3.RSP" Source="REQ" dx1="1005.0"/>
+      <Connection Comment="" Destination="INT2INT.REQ" Source="SUBSCRIBE_1.IND" dx1="1970.0"/>
+      <Connection Comment="" Destination="INT2INT_1.REQ" Source="SUBSCRIBE_1_1.IND" dx1="1285.0"/>
+      <Connection Comment="" Destination="INT2INT_2.REQ" Source="SUBSCRIBE_1_2.IND" dx1="1970.0"/>
+      <Connection Comment="" Destination="INT2INT_3.REQ" Source="SUBSCRIBE_1_3.IND" dx1="1285.0"/>
+      <Connection Comment="" Destination="INITO" Source="SUBSCRIBE_1.INITO" dx1="1695.0"/>
+      <Connection Comment="" Destination="CNF" Source="INT2INT.CNF" dx1="375.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

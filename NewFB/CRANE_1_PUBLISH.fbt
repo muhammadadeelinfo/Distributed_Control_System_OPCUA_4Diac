@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="CRANE_1_PUBLISH">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-13" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+      <Event Comment="Normal Execution Request" Name="CONTROL_E" Type="Event">
+        <With Var="E_STOP"/>
+        <With Var="TEXT_BOX"/>
+        <With Var="N_CTM"/>
+        <With Var="N_FME"/>
+        <With Var="N_FMA"/>
+        <With Var="CHOOSE_CRANE"/>
+        <With Var="ACTIVATE_BRIDGE"/>
+        <With Var="ACTIVATE_TROLLEY"/>
+        <With Var="HOOK_U_IN"/>
+        <With Var="HOOK_D_IN"/>
+      </Event>
+      <Event Comment="" Name="LOC_E" Type="Event">
+        <With Var="X_CTM"/>
+        <With Var="Y_CTM"/>
+        <With Var="X_FME"/>
+        <With Var="Y_FME"/>
+        <With Var="X_FMA"/>
+        <With Var="Y_FMA"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="E_STOP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="TEXT_BOX" Type="INT"/>
+      <VarDeclaration Comment="" Name="N_CTM" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="N_FME" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="N_FMA" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CHOOSE_CRANE" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="ACTIVATE_BRIDGE" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="ACTIVATE_TROLLEY" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="HOOK_U_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="HOOK_D_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="X_CTM" Type="INT"/>
+      <VarDeclaration Comment="" Name="Y_CTM" Type="INT"/>
+      <VarDeclaration Comment="" Name="X_FME" Type="INT"/>
+      <VarDeclaration Comment="" Name="Y_FME" Type="INT"/>
+      <VarDeclaration Comment="" Name="X_FMA" Type="INT"/>
+      <VarDeclaration Comment="" Name="Y_FMA" Type="INT"/>
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="PUBLISH_1" Type="PUBLISH_1" x="7400.0" y="1000.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1C/N_CTM/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_1" Type="PUBLISH_1" x="6800.0" y="800.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1B/TEXT_BOX/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_2" Type="PUBLISH_1" x="2900.0" y="2400.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1K/X_CTM/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_3" Type="PUBLISH_1" x="6200.0" y="600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1A/E_STOP/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_4" Type="PUBLISH_1" x="3500.0" y="2600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1L/Y_CTM/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_5" Type="PUBLISH_1" x="8000.0" y="1200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1D:CRANE1/N_FME/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_6" Type="PUBLISH_1" x="5300.0" y="3200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1O/X_FMA/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_7" Type="PUBLISH_1" x="5900.0" y="3400.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1P/Y_FMA/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_8" Type="PUBLISH_1" x="4300.0" y="1400.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1F/CHOOSE_CRANE/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_9" Type="PUBLISH_1" x="5500.0" y="1800.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1H/ACTIVATE_TROLLEY/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_10" Type="PUBLISH_1" x="6100.0" y="2000.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1I/HOOK_U_IN/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_11" Type="PUBLISH_1" x="4900.0" y="1600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1H/ACTIVATE_BRIDGE/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_12" Type="PUBLISH_1" x="3700.0" y="1200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1E/N_FMA/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_13" Type="PUBLISH_1" x="6700.0" y="2200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1J/HOOK_D_IN/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_14" Type="PUBLISH_1" x="4100.0" y="2800.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1M/X_FME/IN]"/>
+    </FB>
+    <FB Comment="" Name="PUBLISH_1_15" Type="PUBLISH_1" x="4700.0" y="3000.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[opc.tcp://%CRANE1_IP%:4840#/Objects/1:CRANE1N/Y_FME/IN]"/>
+    </FB>
+    <DataConnections>
+      <Connection Comment="" Destination="PUBLISH_1_2.SD_1" Source="X_CTM" dx1="1095.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_4.SD_1" Source="Y_CTM" dx1="1395.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_14.SD_1" Source="X_FME" dx1="1695.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_15.SD_1" Source="Y_FME" dx1="1995.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_6.SD_1" Source="X_FMA" dx1="2295.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_7.SD_1" Source="Y_FMA" dx1="2595.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_3.SD_1" Source="E_STOP" dx1="2745.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_1.SD_1" Source="TEXT_BOX" dx1="3045.0"/>
+      <Connection Comment="" Destination="PUBLISH_1.SD_1" Source="N_CTM" dx1="3345.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_5.SD_1" Source="N_FME" dx1="3645.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_12.SD_1" Source="N_FMA" dx1="1495.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_8.SD_1" Source="CHOOSE_CRANE" dx1="1795.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_11.SD_1" Source="ACTIVATE_BRIDGE" dx1="2095.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_9.SD_1" Source="ACTIVATE_TROLLEY" dx1="2395.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_10.SD_1" Source="HOOK_U_IN" dx1="2695.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_13.SD_1" Source="HOOK_D_IN" dx1="2995.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="PUBLISH_1_2.REQ" Source="LOC_E" dx1="1095.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_3.INIT" Source="INIT" dx1="2745.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_1.INIT" Source="PUBLISH_1_3.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1.INIT" Source="PUBLISH_1_1.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_5.INIT" Source="PUBLISH_1.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_12.INIT" Source="PUBLISH_1_5.INITO" dx1="60.0" dx2="60.0" dy="-780.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_8.INIT" Source="PUBLISH_1_12.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_11.INIT" Source="PUBLISH_1_8.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_9.INIT" Source="PUBLISH_1_11.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_10.INIT" Source="PUBLISH_1_9.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_13.INIT" Source="PUBLISH_1_10.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_2.INIT" Source="PUBLISH_1_13.INITO" dx1="60.0" dx2="60.0" dy="1840.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_4.INIT" Source="PUBLISH_1_2.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_14.INIT" Source="PUBLISH_1_4.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_15.INIT" Source="PUBLISH_1_14.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_6.INIT" Source="PUBLISH_1_15.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_7.INIT" Source="PUBLISH_1_6.INITO" dx1="60.0" dx2="60.0" dy="100.0"/>
+      <Connection Comment="" Destination="INITO" Source="PUBLISH_1_7.INITO" dx1="2255.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_4.REQ" Source="LOC_E" dx1="1395.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_14.REQ" Source="LOC_E" dx1="1695.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_15.REQ" Source="LOC_E" dx1="1995.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_6.REQ" Source="LOC_E" dx1="2295.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_7.REQ" Source="LOC_E" dx1="2595.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_3.REQ" Source="CONTROL_E" dx1="2745.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_1.REQ" Source="CONTROL_E" dx1="3045.0"/>
+      <Connection Comment="" Destination="PUBLISH_1.REQ" Source="CONTROL_E" dx1="3345.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_5.REQ" Source="CONTROL_E" dx1="3645.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_12.REQ" Source="CONTROL_E" dx1="1495.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_8.REQ" Source="CONTROL_E" dx1="1795.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_11.REQ" Source="CONTROL_E" dx1="2095.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_9.REQ" Source="CONTROL_E" dx1="2395.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_10.REQ" Source="CONTROL_E" dx1="2695.0"/>
+      <Connection Comment="" Destination="PUBLISH_1_13.REQ" Source="CONTROL_E" dx1="2995.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="EC_SENSORS_ACTUATORS">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-03-30" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+      <Event Comment="Normal Execution Request" Name="REQ" Type="Event">
+        <With Var="CTM_ACTIVATE_SENSORS"/>
+        <With Var="CTM_ACTIVATE_BRIDGE_I"/>
+        <With Var="CTM_BRIGDE_F_B_I"/>
+        <With Var="CTM_AVTIVATE_TROLLEY_I"/>
+        <With Var="CTM_TROLLEY_F_B_I"/>
+        <With Var="CTM_AVTIVATE_HOOK_I"/>
+        <With Var="CTM_HOOK_U_D_I"/>
+        <With Var="FME_ACTIVATE_SENSORS"/>
+        <With Var="FME_ACTIVATE_BRIDGE_I"/>
+        <With Var="FME_BRIGDE_F_B_I"/>
+        <With Var="FME_AVTIVATE_TROLLEY_I"/>
+        <With Var="FME_TROLLEY_F_B_I"/>
+        <With Var="FME_AVTIVATE_HOOK_I"/>
+        <With Var="FME_HOOK_U_D_I"/>
+        <With Var="FMA_ACTIVATE_SENSORS"/>
+        <With Var="FMA_ACTIVATE_BRIDGE_I"/>
+        <With Var="FMA_BRIGDE_F_B_I"/>
+        <With Var="FMA_AVTIVATE_TROLLEY_I"/>
+        <With Var="FMA_TROLLEY_F_B_I"/>
+        <With Var="FMA_AVTIVATE_HOOK_I"/>
+        <With Var="FMA_HOOK_U_D_I"/>
+        <With Var="E_STOP"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+      <Event Comment="" Name="CNF" Type="Event"/>
+      <Event Comment="" Name="ACTIVATE_SENSORS_E" Type="Event"/>
+      <Event Comment="" Name="BRIGDE_F_B_I_T" Type="Event"/>
+      <Event Comment="" Name="BRIGDE_F_B_I_B" Type="Event"/>
+      <Event Comment="" Name="TROLLEY_F_B_I_F" Type="Event"/>
+      <Event Comment="" Name="TROLLEY_F_B_I_B" Type="Event"/>
+      <Event Comment="" Name="HOOK_U_D_I_D" Type="Event"/>
+      <Event Comment="" Name="HOOK_U_D_I_U" Type="Event"/>
+      <Event Comment="" Name="ACTIVATE_BRIDGE" Type="Event"/>
+      <Event Comment="" Name="AVTIVATE_TROLLEY" Type="Event"/>
+      <Event Comment="" Name="AVTIVATE_HOOK" Type="Event"/>
+      <Event Comment="" Name="DEACTIVATE_BRIDGE" Type="Event"/>
+      <Event Comment="" Name="DEAVTIVATE_TROLLEY" Type="Event"/>
+      <Event Comment="" Name="DEAVTIVATE_HOOK" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="E_STOP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_ACTIVATE_SENSORS" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_ACTIVATE_BRIDGE_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_BRIGDE_F_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_AVTIVATE_TROLLEY_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_TROLLEY_F_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_AVTIVATE_HOOK_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CTM_HOOK_U_D_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_ACTIVATE_SENSORS" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_ACTIVATE_BRIDGE_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_BRIGDE_F_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_AVTIVATE_TROLLEY_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_TROLLEY_F_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_AVTIVATE_HOOK_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_HOOK_U_D_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_ACTIVATE_SENSORS" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_ACTIVATE_BRIDGE_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_BRIGDE_F_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_AVTIVATE_TROLLEY_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_TROLLEY_F_B_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_AVTIVATE_HOOK_I" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_HOOK_U_D_I" Type="BOOL"/>
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="CTM_11" Type="E_R_TRIG" x="3200.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_12" Type="E_F_TRIG" x="3700.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_21" Type="E_R_TRIG" x="4200.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_22" Type="E_F_TRIG" x="4700.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_31" Type="E_R_TRIG" x="5200.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_32" Type="E_F_TRIG" x="5700.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_41" Type="E_R_TRIG" x="6200.0" y="3000.0"/>
+    <FB Comment="" Name="CTM_42" Type="E_F_TRIG" x="6700.0" y="3000.0"/>
+    <FB Comment="" Name="FME41" Type="E_R_TRIG" x="6200.0" y="3400.0"/>
+    <FB Comment="" Name="FME_11" Type="E_R_TRIG" x="3200.0" y="3400.0"/>
+    <FB Comment="" Name="FME_32" Type="E_F_TRIG" x="5700.0" y="3400.0"/>
+    <FB Comment="" Name="FME_42" Type="E_F_TRIG" x="6700.0" y="3400.0"/>
+    <FB Comment="" Name="FME_31" Type="E_R_TRIG" x="5200.0" y="3400.0"/>
+    <FB Comment="" Name="FME_12" Type="E_F_TRIG" x="3700.0" y="3400.0"/>
+    <FB Comment="" Name="FME_21" Type="E_R_TRIG" x="4200.0" y="3400.0"/>
+    <FB Comment="" Name="FME_22" Type="E_F_TRIG" x="4700.0" y="3400.0"/>
+    <FB Comment="" Name="FMA_41" Type="E_R_TRIG" x="6200.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_11" Type="E_R_TRIG" x="3200.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_32" Type="E_F_TRIG" x="5700.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_42" Type="E_F_TRIG" x="6700.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_31" Type="E_R_TRIG" x="5200.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_12" Type="E_F_TRIG" x="3700.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_21" Type="E_R_TRIG" x="4200.0" y="3800.0"/>
+    <FB Comment="" Name="FMA_22" Type="E_F_TRIG" x="4700.0" y="3800.0"/>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="1500.0" y="2700.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="E_CYCLE_1" Type="E_CYCLE" x="1500.0" y="3200.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="E_CYCLE_2" Type="E_CYCLE" x="1500.0" y="3700.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="HA_CTM" Type="E_R_TRIG" x="4200.0" y="2600.0"/>
+    <FB Comment="" Name="BA_CTM" Type="E_R_TRIG" x="3200.0" y="2600.0"/>
+    <FB Comment="" Name="TA_FME" Type="E_R_TRIG" x="5200.0" y="2600.0"/>
+    <FB Comment="" Name="BA_FMA" Type="E_R_TRIG" x="6200.0" y="2600.0"/>
+    <FB Comment="" Name="TA_CTM" Type="E_R_TRIG" x="3700.0" y="2600.0"/>
+    <FB Comment="" Name="BA_FME" Type="E_R_TRIG" x="4700.0" y="2600.0"/>
+    <FB Comment="" Name="HA_FME" Type="E_R_TRIG" x="5700.0" y="2600.0"/>
+    <FB Comment="" Name="TA_FMA" Type="E_R_TRIG" x="6700.0" y="2600.0"/>
+    <FB Comment="" Name="HA_FMA" Type="E_R_TRIG" x="7200.0" y="2600.0"/>
+    <FB Comment="" Name="BD_CTM" Type="E_F_TRIG" x="3200.0" y="2200.0"/>
+    <FB Comment="" Name="TD_CTM" Type="E_F_TRIG" x="3700.0" y="2200.0"/>
+    <FB Comment="" Name="HD_CTM" Type="E_F_TRIG" x="4200.0" y="2200.0"/>
+    <FB Comment="" Name="BD_FME" Type="E_F_TRIG" x="4700.0" y="2200.0"/>
+    <FB Comment="" Name="TD_FME" Type="E_F_TRIG" x="5200.0" y="2200.0"/>
+    <FB Comment="" Name="HD_FME" Type="E_F_TRIG" x="5700.0" y="2200.0"/>
+    <FB Comment="" Name="BD_FMA" Type="E_F_TRIG" x="6200.0" y="2200.0"/>
+    <FB Comment="" Name="TD_FMA" Type="E_F_TRIG" x="6670.0" y="2190.0"/>
+    <FB Comment="" Name="HD_FMA" Type="E_F_TRIG" x="7200.0" y="2200.0"/>
+    <FB Comment="" Name="E_STOP" Type="E_F_TRIG" x="2300.0" y="2900.0"/>
+    <FB Comment="" Name="E_F_TRIG" Type="E_F_TRIG" x="800.0" y="3200.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="CTM_11.QI" Source="CTM_ACTIVATE_SENSORS" dx1="2185.0"/>
+      <Connection Comment="" Destination="CTM_12.QI" Source="CTM_ACTIVATE_SENSORS" dx1="2685.0"/>
+      <Connection Comment="" Destination="FME_11.QI" Source="FME_ACTIVATE_SENSORS" dx1="2185.0"/>
+      <Connection Comment="" Destination="FME_12.QI" Source="FME_ACTIVATE_SENSORS" dx1="2685.0"/>
+      <Connection Comment="" Destination="FMA_11.QI" Source="FMA_ACTIVATE_SENSORS" dx1="2185.0"/>
+      <Connection Comment="" Destination="FMA_12.QI" Source="FMA_ACTIVATE_SENSORS" dx1="2685.0"/>
+      <Connection Comment="" Destination="CTM_21.QI" Source="CTM_BRIGDE_F_B_I" dx1="3185.0"/>
+      <Connection Comment="" Destination="CTM_22.QI" Source="CTM_BRIGDE_F_B_I" dx1="3685.0"/>
+      <Connection Comment="" Destination="CTM_31.QI" Source="CTM_TROLLEY_F_B_I" dx1="4185.0"/>
+      <Connection Comment="" Destination="CTM_32.QI" Source="CTM_TROLLEY_F_B_I" dx1="4685.0"/>
+      <Connection Comment="" Destination="CTM_41.QI" Source="CTM_HOOK_U_D_I" dx1="5185.0"/>
+      <Connection Comment="" Destination="CTM_42.QI" Source="CTM_HOOK_U_D_I" dx1="5685.0"/>
+      <Connection Comment="" Destination="FME_21.QI" Source="FME_BRIGDE_F_B_I" dx1="3185.0"/>
+      <Connection Comment="" Destination="FME_22.QI" Source="FME_BRIGDE_F_B_I" dx1="3685.0"/>
+      <Connection Comment="" Destination="FME_31.QI" Source="FME_TROLLEY_F_B_I" dx1="4185.0"/>
+      <Connection Comment="" Destination="FME_32.QI" Source="FME_TROLLEY_F_B_I" dx1="4685.0"/>
+      <Connection Comment="" Destination="FME41.QI" Source="FME_HOOK_U_D_I" dx1="5185.0"/>
+      <Connection Comment="" Destination="FME_42.QI" Source="FME_HOOK_U_D_I" dx1="5685.0"/>
+      <Connection Comment="" Destination="FMA_21.QI" Source="FMA_BRIGDE_F_B_I" dx1="3185.0"/>
+      <Connection Comment="" Destination="FMA_22.QI" Source="FMA_BRIGDE_F_B_I" dx1="3685.0"/>
+      <Connection Comment="" Destination="FMA_31.QI" Source="FMA_TROLLEY_F_B_I" dx1="4185.0"/>
+      <Connection Comment="" Destination="FMA_32.QI" Source="FMA_TROLLEY_F_B_I" dx1="4685.0"/>
+      <Connection Comment="" Destination="FMA_41.QI" Source="FMA_HOOK_U_D_I" dx1="5185.0"/>
+      <Connection Comment="" Destination="FMA_42.QI" Source="FMA_HOOK_U_D_I" dx1="5685.0"/>
+      <Connection Comment="" Destination="BA_CTM.QI" Source="CTM_ACTIVATE_BRIDGE_I" dx1="2185.0"/>
+      <Connection Comment="" Destination="TA_CTM.QI" Source="CTM_AVTIVATE_TROLLEY_I" dx1="2685.0"/>
+      <Connection Comment="" Destination="HA_CTM.QI" Source="CTM_AVTIVATE_HOOK_I" dx1="3185.0"/>
+      <Connection Comment="" Destination="BA_FME.QI" Source="FME_ACTIVATE_BRIDGE_I" dx1="3685.0"/>
+      <Connection Comment="" Destination="TA_FME.QI" Source="FME_AVTIVATE_TROLLEY_I" dx1="4185.0"/>
+      <Connection Comment="" Destination="HA_FME.QI" Source="FME_AVTIVATE_HOOK_I" dx1="4685.0"/>
+      <Connection Comment="" Destination="BA_FMA.QI" Source="FMA_ACTIVATE_BRIDGE_I" dx1="5185.0"/>
+      <Connection Comment="" Destination="TA_FMA.QI" Source="FMA_AVTIVATE_TROLLEY_I" dx1="5685.0"/>
+      <Connection Comment="" Destination="HA_FMA.QI" Source="FMA_AVTIVATE_HOOK_I" dx1="6185.0"/>
+      <Connection Comment="" Destination="TD_CTM.QI" Source="CTM_AVTIVATE_TROLLEY_I" dx1="2685.0"/>
+      <Connection Comment="" Destination="HD_CTM.QI" Source="CTM_AVTIVATE_HOOK_I" dx1="3185.0"/>
+      <Connection Comment="" Destination="BD_FME.QI" Source="FME_ACTIVATE_BRIDGE_I" dx1="3685.0"/>
+      <Connection Comment="" Destination="TD_FME.QI" Source="FME_AVTIVATE_TROLLEY_I" dx1="4185.0"/>
+      <Connection Comment="" Destination="HD_FME.QI" Source="FME_AVTIVATE_HOOK_I" dx1="4685.0"/>
+      <Connection Comment="" Destination="BD_FMA.QI" Source="FMA_ACTIVATE_BRIDGE_I" dx1="5185.0"/>
+      <Connection Comment="" Destination="TD_FMA.QI" Source="FMA_AVTIVATE_TROLLEY_I" dx1="5655.0"/>
+      <Connection Comment="" Destination="HD_FMA.QI" Source="FMA_AVTIVATE_HOOK_I" dx1="6185.0"/>
+      <Connection Comment="" Destination="E_STOP.QI" Source="E_STOP" dx1="1285.0"/>
+      <Connection Comment="" Destination="BD_CTM.QI" Source="CTM_ACTIVATE_BRIDGE_I" dx1="2185.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.QI" Source="E_STOP" dx1="60.0" dx2="60.0" dy="1665.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="ACTIVATE_SENSORS_E" Source="E_CYCLE.EO" dx1="3230.0"/>
+      <Connection Comment="" Destination="ACTIVATE_SENSORS_E" Source="E_CYCLE_1.EO" dx1="3230.0"/>
+      <Connection Comment="" Destination="ACTIVATE_SENSORS_E" Source="E_CYCLE_2.EO" dx1="3230.0"/>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="CTM_11.EO" dx1="60.0" dx2="60.0" dy="-2625.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="CTM_12.EO" dx1="60.0" dx2="60.0" dy="-2625.0"/>
+      <Connection Comment="" Destination="INITO" Source="INIT"/>
+      <Connection Comment="" Destination="E_CYCLE_1.START" Source="FME_11.EO" dx1="60.0" dx2="60.0" dy="-3220.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.STOP" Source="FME_12.EO" dx1="60.0" dx2="60.0" dy="-3220.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.START" Source="FMA_11.EO" dx1="60.0" dx2="60.0" dy="-3825.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.STOP" Source="FMA_12.EO" dx1="60.0" dx2="60.0" dy="-3820.0"/>
+      <Connection Comment="" Destination="CTM_11.EI" Source="REQ" dx1="2185.0"/>
+      <Connection Comment="" Destination="CTM_12.EI" Source="REQ" dx1="2685.0"/>
+      <Connection Comment="" Destination="FME_11.EI" Source="REQ" dx1="2185.0"/>
+      <Connection Comment="" Destination="FME_12.EI" Source="REQ" dx1="2685.0"/>
+      <Connection Comment="" Destination="FMA_11.EI" Source="REQ" dx1="2185.0"/>
+      <Connection Comment="" Destination="FMA_12.EI" Source="REQ" dx1="2685.0"/>
+      <Connection Comment="" Destination="CNF" Source="REQ"/>
+      <Connection Comment="" Destination="CTM_21.EI" Source="REQ" dx1="3185.0"/>
+      <Connection Comment="" Destination="CTM_22.EI" Source="REQ" dx1="3685.0"/>
+      <Connection Comment="" Destination="BRIGDE_F_B_I_T" Source="CTM_21.EO" dx1="1875.0"/>
+      <Connection Comment="" Destination="BRIGDE_F_B_I_B" Source="CTM_22.EO" dx1="1630.0"/>
+      <Connection Comment="" Destination="CTM_31.EI" Source="REQ" dx1="4185.0"/>
+      <Connection Comment="" Destination="CTM_32.EI" Source="REQ" dx1="4685.0"/>
+      <Connection Comment="" Destination="TROLLEY_F_B_I_F" Source="CTM_31.EO" dx1="1375.0"/>
+      <Connection Comment="" Destination="TROLLEY_F_B_I_B" Source="CTM_32.EO" dx1="1130.0"/>
+      <Connection Comment="" Destination="CTM_41.EI" Source="REQ" dx1="5185.0"/>
+      <Connection Comment="" Destination="CTM_42.EI" Source="REQ" dx1="5685.0"/>
+      <Connection Comment="" Destination="HOOK_U_D_I_D" Source="CTM_41.EO" dx1="875.0"/>
+      <Connection Comment="" Destination="HOOK_U_D_I_U" Source="CTM_42.EO" dx1="630.0"/>
+      <Connection Comment="" Destination="FME_21.EI" Source="REQ" dx1="3185.0"/>
+      <Connection Comment="" Destination="FME_22.EI" Source="REQ" dx1="3685.0"/>
+      <Connection Comment="" Destination="FME_31.EI" Source="REQ" dx1="4185.0"/>
+      <Connection Comment="" Destination="FME_32.EI" Source="REQ" dx1="4685.0"/>
+      <Connection Comment="" Destination="FME41.EI" Source="REQ" dx1="5185.0"/>
+      <Connection Comment="" Destination="FME_42.EI" Source="REQ" dx1="5685.0"/>
+      <Connection Comment="" Destination="BRIGDE_F_B_I_T" Source="FME_21.EO" dx1="1875.0"/>
+      <Connection Comment="" Destination="BRIGDE_F_B_I_B" Source="FME_22.EO" dx1="1630.0"/>
+      <Connection Comment="" Destination="TROLLEY_F_B_I_F" Source="FME_31.EO" dx1="1375.0"/>
+      <Connection Comment="" Destination="TROLLEY_F_B_I_B" Source="FME_32.EO" dx1="1130.0"/>
+      <Connection Comment="" Destination="HOOK_U_D_I_D" Source="FME41.EO" dx1="875.0"/>
+      <Connection Comment="" Destination="HOOK_U_D_I_U" Source="FME_42.EO" dx1="630.0"/>
+      <Connection Comment="" Destination="BRIGDE_F_B_I_T" Source="FMA_21.EO" dx1="1875.0"/>
+      <Connection Comment="" Destination="BRIGDE_F_B_I_B" Source="FMA_22.EO" dx1="1630.0"/>
+      <Connection Comment="" Destination="TROLLEY_F_B_I_F" Source="FMA_31.EO" dx1="1375.0"/>
+      <Connection Comment="" Destination="TROLLEY_F_B_I_B" Source="FMA_32.EO" dx1="1130.0"/>
+      <Connection Comment="" Destination="HOOK_U_D_I_D" Source="FMA_41.EO" dx1="875.0"/>
+      <Connection Comment="" Destination="HOOK_U_D_I_U" Source="FMA_42.EO" dx1="630.0"/>
+      <Connection Comment="" Destination="FMA_21.EI" Source="REQ" dx1="3185.0"/>
+      <Connection Comment="" Destination="FMA_22.EI" Source="REQ" dx1="3685.0"/>
+      <Connection Comment="" Destination="FMA_31.EI" Source="REQ" dx1="4185.0"/>
+      <Connection Comment="" Destination="FMA_32.EI" Source="REQ" dx1="4685.0"/>
+      <Connection Comment="" Destination="FMA_41.EI" Source="REQ" dx1="5185.0"/>
+      <Connection Comment="" Destination="FMA_42.EI" Source="REQ" dx1="5685.0"/>
+      <Connection Comment="" Destination="ACTIVATE_BRIDGE" Source="BA_CTM.EO" dx1="2375.0"/>
+      <Connection Comment="" Destination="ACTIVATE_BRIDGE" Source="BA_FME.EO" dx1="1625.0"/>
+      <Connection Comment="" Destination="ACTIVATE_BRIDGE" Source="BA_FMA.EO" dx1="875.0"/>
+      <Connection Comment="" Destination="AVTIVATE_TROLLEY" Source="TA_CTM.EO" dx1="2125.0"/>
+      <Connection Comment="" Destination="AVTIVATE_TROLLEY" Source="TA_FME.EO" dx1="1375.0"/>
+      <Connection Comment="" Destination="AVTIVATE_TROLLEY" Source="TA_FMA.EO" dx1="625.0"/>
+      <Connection Comment="" Destination="AVTIVATE_HOOK" Source="HA_CTM.EO" dx1="1875.0"/>
+      <Connection Comment="" Destination="AVTIVATE_HOOK" Source="HA_FME.EO" dx1="1125.0"/>
+      <Connection Comment="" Destination="AVTIVATE_HOOK" Source="HA_FMA.EO" dx1="375.0"/>
+      <Connection Comment="" Destination="BA_CTM.EI" Source="REQ" dx1="2185.0"/>
+      <Connection Comment="" Destination="TA_CTM.EI" Source="REQ" dx1="2685.0"/>
+      <Connection Comment="" Destination="HA_CTM.EI" Source="REQ" dx1="3185.0"/>
+      <Connection Comment="" Destination="BA_FME.EI" Source="REQ" dx1="3685.0"/>
+      <Connection Comment="" Destination="TA_FME.EI" Source="REQ" dx1="4185.0"/>
+      <Connection Comment="" Destination="HA_FME.EI" Source="REQ" dx1="4685.0"/>
+      <Connection Comment="" Destination="BA_FMA.EI" Source="REQ" dx1="5185.0"/>
+      <Connection Comment="" Destination="TA_FMA.EI" Source="REQ" dx1="5685.0"/>
+      <Connection Comment="" Destination="HA_FMA.EI" Source="REQ" dx1="6185.0"/>
+      <Connection Comment="" Destination="DEACTIVATE_BRIDGE" Source="BD_CTM.EO" dx1="2380.0"/>
+      <Connection Comment="" Destination="DEACTIVATE_BRIDGE" Source="BD_FME.EO" dx1="1630.0"/>
+      <Connection Comment="" Destination="DEACTIVATE_BRIDGE" Source="BD_FMA.EO" dx1="880.0"/>
+      <Connection Comment="" Destination="DEAVTIVATE_TROLLEY" Source="TD_CTM.EO" dx1="2130.0"/>
+      <Connection Comment="" Destination="DEAVTIVATE_TROLLEY" Source="TD_FME.EO" dx1="1380.0"/>
+      <Connection Comment="" Destination="DEAVTIVATE_TROLLEY" Source="TD_FMA.EO" dx1="645.0"/>
+      <Connection Comment="" Destination="DEAVTIVATE_HOOK" Source="HD_CTM.EO" dx1="1880.0"/>
+      <Connection Comment="" Destination="BD_CTM.EI" Source="REQ" dx1="2185.0"/>
+      <Connection Comment="" Destination="TD_CTM.EI" Source="REQ" dx1="2685.0"/>
+      <Connection Comment="" Destination="HD_CTM.EI" Source="REQ" dx1="3185.0"/>
+      <Connection Comment="" Destination="BD_FME.EI" Source="REQ" dx1="3685.0"/>
+      <Connection Comment="" Destination="TD_FME.EI" Source="REQ" dx1="4185.0"/>
+      <Connection Comment="" Destination="HD_FME.EI" Source="REQ" dx1="4685.0"/>
+      <Connection Comment="" Destination="BD_FMA.EI" Source="REQ" dx1="5185.0"/>
+      <Connection Comment="" Destination="TD_FMA.EI" Source="REQ" dx1="5655.0"/>
+      <Connection Comment="" Destination="HD_FMA.EI" Source="REQ" dx1="6185.0"/>
+      <Connection Comment="" Destination="E_STOP.EI" Source="REQ" dx1="1285.0"/>
+      <Connection Comment="" Destination="DEACTIVATE_BRIDGE" Source="E_STOP.EO" dx1="2830.0"/>
+      <Connection Comment="" Destination="DEAVTIVATE_TROLLEY" Source="E_STOP.EO" dx1="2830.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="E_F_TRIG.EO" dx1="140.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.STOP" Source="E_F_TRIG.EO" dx1="140.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.STOP" Source="E_F_TRIG.EO" dx1="140.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.EI" Source="REQ" dx1="60.0" dx2="60.0" dy="1605.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

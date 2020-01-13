@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="INT_TRIGGER">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="iotdeveloperpk" Date="2019-02-10" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event">
+        <With Var="DT"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event">
+        <With Var="RD_1"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="" Name="DT" Type="TIME"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Comment="" Name="RD_1" Type="INT"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="UPDATE" Type="UPDATE" x="3550.0" y="1270.0"/>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="2710.0" y="1300.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="RD_1" Source="UPDATE.RD_1" dx1="1505.0"/>
+      <Connection Comment="" Destination="E_CYCLE.DT" Source="DT" dx1="1265.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="UPDATE.REQ" Source="E_CYCLE.EO" dx1="210.0"/>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="INIT" dx1="1265.0"/>
+      <Connection Comment="" Destination="INITO" Source="UPDATE.CNF" dx1="1505.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

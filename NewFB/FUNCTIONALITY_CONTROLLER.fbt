@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="FUNCTIONALITY_CONTROLLER">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-04" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Normal Execution Request" Name="TRIGGER" Type="Event">
+        <With Var="CTM_N_IN"/>
+        <With Var="FME_N_IN"/>
+        <With Var="FMA_N_IN"/>
+        <With Var="E_STOP"/>
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Execution Confirmation" Name="CTM_OUT" Type="Event"/>
+      <Event Comment="" Name="FME_OUT" Type="Event"/>
+      <Event Comment="" Name="FMA_OUT" Type="Event"/>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Comment="Input event qualifier" Name="CTM_N_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FME_N_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="FMA_N_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="E_STOP" Type="BOOL"/>
+    </InputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="E_R_TRIG" Type="E_R_TRIG" x="2100.0" y="200.0"/>
+    <FB Comment="" Name="E_R_TRIG_1" Type="E_R_TRIG" x="2100.0" y="1200.0"/>
+    <FB Comment="" Name="E_R_TRIG_2" Type="E_R_TRIG" x="2100.0" y="2300.0"/>
+    <FB Comment="" Name="E_CYCLE" Type="E_CYCLE" x="3300.0" y="400.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="E_CYCLE_1" Type="E_CYCLE" x="3300.0" y="1400.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="E_CYCLE_2" Type="E_CYCLE" x="3300.0" y="2500.0">
+      <Parameter Name="DT" Value="T#100ms"/>
+    </FB>
+    <FB Comment="" Name="E_F_TRIG" Type="E_F_TRIG" x="2100.0" y="600.0"/>
+    <FB Comment="" Name="E_F_TRIG_1" Type="E_F_TRIG" x="2100.0" y="1600.0"/>
+    <FB Comment="" Name="E_F_TRIG_2" Type="E_F_TRIG" x="2100.0" y="2700.0"/>
+    <FB Comment="" Name="EMERGENCY_CONTROLLER" Type="EMERGENCY_CONTROLLER" x="800.0" y="1200.0"/>
+    <FB Comment="" Name="E_F_TRIG_3" Type="E_F_TRIG" x="1100.0" y="2000.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="E_R_TRIG.QI" Source="EMERGENCY_CONTROLLER.CTM_N_OUT" dx1="150.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.QI" Source="EMERGENCY_CONTROLLER.CTM_N_OUT" dx1="150.0"/>
+      <Connection Comment="" Destination="E_R_TRIG_1.QI" Source="EMERGENCY_CONTROLLER.FME_N_OUT" dx1="150.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.QI" Source="EMERGENCY_CONTROLLER.FME_N_OUT" dx1="150.0"/>
+      <Connection Comment="" Destination="E_R_TRIG_2.QI" Source="EMERGENCY_CONTROLLER.FMA_N_OUT" dx1="150.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_2.QI" Source="EMERGENCY_CONTROLLER.FMA_N_OUT" dx1="150.0"/>
+      <Connection Comment="" Destination="EMERGENCY_CONTROLLER.CTM_N_IN" Source="CTM_N_IN" dx1="200.0"/>
+      <Connection Comment="" Destination="EMERGENCY_CONTROLLER.FME_N_IN" Source="FME_N_IN" dx1="200.0"/>
+      <Connection Comment="" Destination="EMERGENCY_CONTROLLER.FMA_N_IN" Source="FMA_N_IN" dx1="200.0"/>
+      <Connection Comment="" Destination="EMERGENCY_CONTROLLER.E_STOP" Source="E_STOP" dx1="200.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_3.QI" Source="E_STOP" dx1="205.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="E_CYCLE.START" Source="E_R_TRIG.EO" dx1="390.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="E_F_TRIG.EO" dx1="390.0"/>
+      <Connection Comment="" Destination="CTM_OUT" Source="E_CYCLE.EO" dx1="375.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.START" Source="E_R_TRIG_1.EO" dx1="390.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.STOP" Source="E_F_TRIG_1.EO" dx1="390.0"/>
+      <Connection Comment="" Destination="FME_OUT" Source="E_CYCLE_1.EO" dx1="375.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.START" Source="E_R_TRIG_2.EO" dx1="390.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.STOP" Source="E_F_TRIG_2.EO" dx1="390.0"/>
+      <Connection Comment="" Destination="FMA_OUT" Source="E_CYCLE_2.EO" dx1="375.0"/>
+      <Connection Comment="" Destination="E_R_TRIG.EI" Source="EMERGENCY_CONTROLLER.CNF" dx1="150.0"/>
+      <Connection Comment="" Destination="E_F_TRIG.EI" Source="EMERGENCY_CONTROLLER.CNF" dx1="150.0"/>
+      <Connection Comment="" Destination="E_R_TRIG_1.EI" Source="EMERGENCY_CONTROLLER.CNF"/>
+      <Connection Comment="" Destination="E_F_TRIG_1.EI" Source="EMERGENCY_CONTROLLER.CNF" dx1="150.0"/>
+      <Connection Comment="" Destination="E_R_TRIG_2.EI" Source="EMERGENCY_CONTROLLER.CNF" dx1="150.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_2.EI" Source="EMERGENCY_CONTROLLER.CNF" dx1="150.0"/>
+      <Connection Comment="" Destination="EMERGENCY_CONTROLLER.REQ" Source="TRIGGER" dx1="200.0"/>
+      <Connection Comment="" Destination="E_F_TRIG_3.EI" Source="TRIGGER" dx1="205.0"/>
+      <Connection Comment="" Destination="E_CYCLE.STOP" Source="E_F_TRIG_3.EO" dx1="1395.0"/>
+      <Connection Comment="" Destination="E_CYCLE_1.STOP" Source="E_F_TRIG_3.EO" dx1="1395.0"/>
+      <Connection Comment="" Destination="E_CYCLE_2.STOP" Source="E_F_TRIG_3.EO" dx1="1390.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>

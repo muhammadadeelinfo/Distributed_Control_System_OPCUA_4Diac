@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
+<FBType Comment="Composite Function Block Type" Name="CRANE_1_SUBSCRIBE">
+  <Identification Standard="61499-2"/>
+  <VersionInfo Author="adeel" Date="2019-04-13" Version="1.0"/>
+  <InterfaceList>
+    <EventInputs>
+      <Event Comment="Initialization Request" Name="INIT" Type="Event"/>
+    </EventInputs>
+    <EventOutputs>
+      <Event Comment="Initialization Confirm" Name="INITO" Type="Event"/>
+      <Event Comment="Execution Confirmation" Name="CONTROL_E" Type="Event">
+        <With Var="E_STOP"/>
+        <With Var="TEXT_BOX"/>
+        <With Var="N_CTM"/>
+        <With Var="N_FME"/>
+        <With Var="N_FMA"/>
+        <With Var="CHOOSE_CRANE"/>
+        <With Var="ACTIVATE_BRIDGE"/>
+        <With Var="ACTIVATE_TROLLEY"/>
+        <With Var="HOOK_U_IN"/>
+        <With Var="HOOK_D_IN"/>
+      </Event>
+      <Event Comment="" Name="LOC_E" Type="Event">
+        <With Var="X_CTM"/>
+        <With Var="Y_CTM"/>
+        <With Var="X_FME"/>
+        <With Var="Y_FME"/>
+        <With Var="X_FMA"/>
+        <With Var="Y_FMA"/>
+      </Event>
+    </EventOutputs>
+    <OutputVars>
+      <VarDeclaration Comment="" Name="E_STOP" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="TEXT_BOX" Type="INT"/>
+      <VarDeclaration Comment="" Name="N_CTM" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="N_FME" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="N_FMA" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="CHOOSE_CRANE" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="ACTIVATE_BRIDGE" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="ACTIVATE_TROLLEY" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="HOOK_U_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="HOOK_D_IN" Type="BOOL"/>
+      <VarDeclaration Comment="" Name="X_CTM" Type="INT"/>
+      <VarDeclaration Comment="" Name="Y_CTM" Type="INT"/>
+      <VarDeclaration Comment="" Name="X_FME" Type="INT"/>
+      <VarDeclaration Comment="" Name="Y_FME" Type="INT"/>
+      <VarDeclaration Comment="" Name="X_FMA" Type="INT"/>
+      <VarDeclaration Comment="" Name="Y_FMA" Type="INT"/>
+    </OutputVars>
+  </InterfaceList>
+  <FBNetwork>
+    <FB Comment="" Name="SUBSCRIBE_1" Type="SUBSCRIBE_1" x="1300.0" y="600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1A]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_1" Type="SUBSCRIBE_1" x="1300.0" y="1300.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1B]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_2" Type="SUBSCRIBE_1" x="1300.0" y="2000.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1C]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_3" Type="SUBSCRIBE_1" x="1300.0" y="2700.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1D]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_4" Type="SUBSCRIBE_1" x="3800.0" y="200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1E]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_5" Type="SUBSCRIBE_1" x="3800.0" y="900.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1F]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_6" Type="SUBSCRIBE_1" x="3800.0" y="1600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1G]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_7" Type="SUBSCRIBE_1" x="3800.0" y="2300.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1H]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_8" Type="SUBSCRIBE_1" x="3800.0" y="3000.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1I]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_9" Type="SUBSCRIBE_1" x="3800.0" y="3700.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1J]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_10" Type="SUBSCRIBE_1" x="6000.0" y="200.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1K]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_11" Type="SUBSCRIBE_1" x="6000.0" y="900.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1L]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_12" Type="SUBSCRIBE_1" x="6000.0" y="1600.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1M]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_13" Type="SUBSCRIBE_1" x="6000.0" y="2300.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1N]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_14" Type="SUBSCRIBE_1" x="6000.0" y="3000.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1O]"/>
+    </FB>
+    <FB Comment="" Name="SUBSCRIBE_1_15" Type="SUBSCRIBE_1" x="6000.0" y="3700.0">
+      <Parameter Name="QI" Value="1"/>
+      <Parameter Name="ID" Value="opc_ua[/Objects/1:CRANE1P]"/>
+    </FB>
+    <FB Comment="" Name="N_FMA" Type="BOOL2BOOL" x="4500.0" y="400.0"/>
+    <FB Comment="" Name="E_STOP" Type="BOOL2BOOL" x="2400.0" y="800.0"/>
+    <FB Comment="" Name="N_CTM" Type="BOOL2BOOL" x="2400.0" y="2200.0"/>
+    <FB Comment="" Name="N_FME" Type="BOOL2BOOL" x="2400.0" y="2900.0"/>
+    <FB Comment="" Name="TEXT_BOX" Type="INT2INT" x="2500.0" y="1500.0"/>
+    <FB Comment="" Name="CHOOSE_CRANE" Type="BOOL2BOOL" x="4500.0" y="1100.0"/>
+    <FB Comment="" Name="ACTIVATE_BRIDGE" Type="BOOL2BOOL" x="4500.0" y="1800.0"/>
+    <FB Comment="" Name="X_CTM" Type="INT2INT" x="7000.0" y="400.0"/>
+    <FB Comment="" Name="ACTIVATE_TROLLEY" Type="BOOL2BOOL" x="4500.0" y="2500.0"/>
+    <FB Comment="" Name="HOOK_U_IN" Type="BOOL2BOOL" x="4500.0" y="3200.0"/>
+    <FB Comment="" Name="HOOK_D_IN" Type="BOOL2BOOL" x="4500.0" y="3900.0"/>
+    <FB Comment="" Name="Y_CTM" Type="INT2INT" x="7000.0" y="1100.0"/>
+    <FB Comment="" Name="X_FME" Type="INT2INT" x="7000.0" y="1800.0"/>
+    <FB Comment="" Name="Y_FME" Type="INT2INT" x="7000.0" y="2500.0"/>
+    <FB Comment="" Name="X_FMA" Type="INT2INT" x="7000.0" y="3200.0"/>
+    <FB Comment="" Name="Y_FMA" Type="INT2INT" x="7000.0" y="3800.0"/>
+    <DataConnections>
+      <Connection Comment="" Destination="E_STOP.IN" Source="SUBSCRIBE_1.RD_1" dx1="270.0"/>
+      <Connection Comment="" Destination="TEXT_BOX.IN" Source="SUBSCRIBE_1_1.RD_1" dx1="270.0"/>
+      <Connection Comment="" Destination="N_CTM.IN" Source="SUBSCRIBE_1_2.RD_1" dx1="270.0"/>
+      <Connection Comment="" Destination="N_FME.IN" Source="SUBSCRIBE_1_3.RD_1" dx1="270.0"/>
+      <Connection Comment="" Destination="E_STOP" Source="E_STOP.OUT" dx1="60.0"/>
+      <Connection Comment="" Destination="TEXT_BOX" Source="TEXT_BOX.OUT" dx1="2585.0"/>
+      <Connection Comment="" Destination="N_CTM" Source="N_CTM.OUT" dx1="2565.0"/>
+      <Connection Comment="" Destination="N_FME" Source="N_FME.OUT" dx1="2565.0"/>
+      <Connection Comment="" Destination="N_FMA.IN" Source="SUBSCRIBE_1_4.RD_1" dx1="70.0"/>
+      <Connection Comment="" Destination="N_FMA" Source="N_FMA.OUT" dx1="1515.0"/>
+      <Connection Comment="" Destination="CHOOSE_CRANE.IN" Source="SUBSCRIBE_1_5.RD_1" dx1="70.0"/>
+      <Connection Comment="" Destination="ACTIVATE_BRIDGE.IN" Source="SUBSCRIBE_1_6.RD_1" dx1="70.0"/>
+      <Connection Comment="" Destination="ACTIVATE_TROLLEY.IN" Source="SUBSCRIBE_1_7.RD_1" dx1="70.0"/>
+      <Connection Comment="" Destination="HOOK_U_IN.IN" Source="SUBSCRIBE_1_8.RD_1" dx1="70.0"/>
+      <Connection Comment="" Destination="HOOK_D_IN.IN" Source="SUBSCRIBE_1_9.RD_1" dx1="70.0"/>
+      <Connection Comment="" Destination="X_CTM.IN" Source="SUBSCRIBE_1_10.RD_1" dx1="205.0"/>
+      <Connection Comment="" Destination="Y_CTM.IN" Source="SUBSCRIBE_1_11.RD_1" dx1="205.0"/>
+      <Connection Comment="" Destination="X_FME.IN" Source="SUBSCRIBE_1_12.RD_1" dx1="205.0"/>
+      <Connection Comment="" Destination="Y_FME.IN" Source="SUBSCRIBE_1_13.RD_1" dx1="205.0"/>
+      <Connection Comment="" Destination="X_FMA.IN" Source="SUBSCRIBE_1_14.RD_1" dx1="205.0"/>
+      <Connection Comment="" Destination="Y_FMA.IN" Source="SUBSCRIBE_1_15.RD_1" dx1="205.0"/>
+      <Connection Comment="" Destination="CHOOSE_CRANE" Source="CHOOSE_CRANE.OUT" dx1="1525.0"/>
+      <Connection Comment="" Destination="HOOK_U_IN" Source="HOOK_U_IN.OUT" dx1="1555.0"/>
+      <Connection Comment="" Destination="ACTIVATE_BRIDGE" Source="ACTIVATE_BRIDGE.OUT" dx1="1490.0"/>
+      <Connection Comment="" Destination="ACTIVATE_TROLLEY" Source="ACTIVATE_TROLLEY.OUT" dx1="1460.0"/>
+      <Connection Comment="" Destination="HOOK_D_IN" Source="HOOK_D_IN.OUT" dx1="1555.0"/>
+      <Connection Comment="" Destination="X_CTM" Source="X_CTM.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="Y_CTM" Source="Y_CTM.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="X_FME" Source="X_FME.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="Y_FME" Source="Y_FME.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="X_FMA" Source="X_FMA.OUT" dx1="375.0"/>
+      <Connection Comment="" Destination="Y_FMA" Source="Y_FMA.OUT" dx1="375.0"/>
+    </DataConnections>
+    <EventConnections>
+      <Connection Comment="" Destination="SUBSCRIBE_1_1.INIT" Source="SUBSCRIBE_1.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_2.INIT" Source="SUBSCRIBE_1_1.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_3.INIT" Source="SUBSCRIBE_1_2.INITO" dx1="60.0" dx2="60.0" dy="200.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_5.INIT" Source="SUBSCRIBE_1_4.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_6.INIT" Source="SUBSCRIBE_1_5.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_7.INIT" Source="SUBSCRIBE_1_6.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_8.INIT" Source="SUBSCRIBE_1_7.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_9.INIT" Source="SUBSCRIBE_1_8.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_10.INIT" Source="SUBSCRIBE_1_9.INITO" dx1="820.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_11.INIT" Source="SUBSCRIBE_1_10.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_12.INIT" Source="SUBSCRIBE_1_11.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_13.INIT" Source="SUBSCRIBE_1_12.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_14.INIT" Source="SUBSCRIBE_1_13.INITO" dx1="60.0" dx2="60.0" dy="150.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_15.INIT" Source="SUBSCRIBE_1_14.INITO" dx1="60.0" dx2="60.0" dy="200.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1.INIT" Source="INIT" dx1="560.0"/>
+      <Connection Comment="" Destination="SUBSCRIBE_1_4.INIT" Source="SUBSCRIBE_1_3.INITO" dx1="195.0"/>
+      <Connection Comment="" Destination="E_STOP.REQ" Source="SUBSCRIBE_1.IND" dx1="270.0"/>
+      <Connection Comment="" Destination="TEXT_BOX.REQ" Source="SUBSCRIBE_1_1.IND" dx1="270.0"/>
+      <Connection Comment="" Destination="N_CTM.REQ" Source="SUBSCRIBE_1_2.IND" dx1="270.0"/>
+      <Connection Comment="" Destination="N_FME.REQ" Source="SUBSCRIBE_1_3.IND" dx1="270.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="E_STOP.CNF" dx1="60.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="TEXT_BOX.CNF" dx1="60.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="N_CTM.CNF" dx1="60.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="N_FME.CNF" dx1="60.0"/>
+      <Connection Comment="" Destination="N_FMA.REQ" Source="SUBSCRIBE_1_4.IND" dx1="70.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="N_FMA.CNF" dx1="1515.0"/>
+      <Connection Comment="" Destination="CHOOSE_CRANE.REQ" Source="SUBSCRIBE_1_5.IND" dx1="70.0"/>
+      <Connection Comment="" Destination="ACTIVATE_BRIDGE.REQ" Source="SUBSCRIBE_1_6.IND" dx1="70.0"/>
+      <Connection Comment="" Destination="ACTIVATE_TROLLEY.REQ" Source="SUBSCRIBE_1_7.IND" dx1="70.0"/>
+      <Connection Comment="" Destination="HOOK_U_IN.REQ" Source="SUBSCRIBE_1_8.IND" dx1="70.0"/>
+      <Connection Comment="" Destination="HOOK_D_IN.REQ" Source="SUBSCRIBE_1_9.IND" dx1="70.0"/>
+      <Connection Comment="" Destination="X_CTM.REQ" Source="SUBSCRIBE_1_10.IND" dx1="205.0"/>
+      <Connection Comment="" Destination="Y_CTM.REQ" Source="SUBSCRIBE_1_11.IND" dx1="205.0"/>
+      <Connection Comment="" Destination="X_FME.REQ" Source="SUBSCRIBE_1_12.IND" dx1="205.0"/>
+      <Connection Comment="" Destination="Y_FME.REQ" Source="SUBSCRIBE_1_13.IND" dx1="205.0"/>
+      <Connection Comment="" Destination="X_FMA.REQ" Source="SUBSCRIBE_1_14.IND" dx1="205.0"/>
+      <Connection Comment="" Destination="Y_FMA.REQ" Source="SUBSCRIBE_1_15.IND" dx1="205.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="CHOOSE_CRANE.CNF" dx1="1525.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="ACTIVATE_BRIDGE.CNF" dx1="1490.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="ACTIVATE_TROLLEY.CNF" dx1="1460.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="HOOK_U_IN.CNF" dx1="1555.0"/>
+      <Connection Comment="" Destination="CONTROL_E" Source="HOOK_D_IN.CNF" dx1="1555.0"/>
+      <Connection Comment="" Destination="LOC_E" Source="X_CTM.CNF" dx1="375.0"/>
+      <Connection Comment="" Destination="LOC_E" Source="Y_CTM.CNF" dx1="375.0"/>
+      <Connection Comment="" Destination="LOC_E" Source="X_FME.CNF" dx1="375.0"/>
+      <Connection Comment="" Destination="LOC_E" Source="Y_FME.CNF" dx1="375.0"/>
+      <Connection Comment="" Destination="LOC_E" Source="X_FMA.CNF" dx1="375.0"/>
+      <Connection Comment="" Destination="LOC_E" Source="Y_FMA.CNF" dx1="375.0"/>
+      <Connection Comment="" Destination="INITO" Source="SUBSCRIBE_1_15.INITO" dx1="775.0"/>
+    </EventConnections>
+  </FBNetwork>
+</FBType>
