@@ -14,3 +14,9 @@ of cranes use sensors and actuators that move the crane and control the bridges,
 trolleys, and hooks. All the devices in the distributed network are controlled with
 one HMI device.
 ![Image description](https://github.com/muhammadadeelinfo/Distributed_Control_System_OPCUA_4Diac/blob/master/MODEL.png)
+
+# Demo Videos for Crame Model
+
+[![Part-1 : Single crane function]()](https://youtu.be/iavGphjXof4)
+
+[![Part-2 : Tandem Function]()](https://youtu.be/tIWFbKm1I54)
